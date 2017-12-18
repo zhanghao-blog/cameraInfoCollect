@@ -1,5 +1,7 @@
 # 移动采集APP端
 
+[视频专网GIS平台](https://github.com/zhanghao-blog/videoGIS/blob/master/README.md)
+
 ### 技术栈
 
 - superMap iClient javascript API
