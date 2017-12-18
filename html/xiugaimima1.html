@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta name="misapplication-tap-highlight" content="no"/>
+	<meta name="HandheldFriendly" content="true"/>
+	<meta name="MobileOptimized" content="320"/>
+    <script src="../js/zepto.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/zepto-touch.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="../js/libs/SuperMap.Include.js"></script>
+    <script src="../js/interface.js" type="text/javascript" charset="utf-8"></script>
+    <title></title>
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	a{
+    		text-decoration: none;
+    	}
+    	li{
+    		list-style: none;
+    	}
+    	html,body{
+    		height: 100%;
+    	}
+    	.box{
+    		height: 100%;
+    		width: 100%;
+    		display: -webkit-box;
+    		display: -moz-box;
+    		display: box;
+    		-webkit-box-orient: vertical;
+    		-moz-box-orient: vertical;
+    		box-orient:vertical;
+    		background: #f2f2f2;
+    	}
+    	header{
+    		height: 0.90rem;
+    		background: #1558a7;
+    		font-size: 0.34rem;
+    		line-height: 0.90rem;
+    		text-align: center;
+    		color: #feffff;
+    	}
+    
+    	.zhong{
+    		-webkit-box-flex: 1;
+    		-moz-box-flex: 1;
+    		box-flex:1;
+    		background: #f2f2f2;
+    	}
+    	.row{
+    		background: #FFFFFF;
+    		padding: .2rem 0 .2rem .6rem;
+    		font-size: .32rem;
+    	}
+    	#qd{
+	    	display: block;
+	    	margin: .24rem auto;
+	    	background: #1558a7;
+	    	width: 80%;
+	    	height: .6rem;
+	    	border: none;
+	    	border-radius: .1rem;
+	    	font-size: .32rem;
+	    	font-weight: 500;
+	    	color: #fff;
+	    	outline: none;
+	    }
+    	footer{
+    		height: 0.88rem;
+    		background: #f2ffff;
+    		border-top: 1px solid #cccccc;
+    		box-shadow: 0px -4px 9px 0px rgba(136,152,177,0.3);
+    		z-index: 99;
+    	}
+    	#rwgl{
+    		width: 30%;
+    		float: left;
+    		font-size: 0.21rem;
+    		text-align: center;
+    		line-height: 1.3rem;
+    		background: url(../img/caiji.png) no-repeat center 30%;
+    		background-size: 0.3rem;
+    		height: 100%;
+    	}
+    	#hc{
+    		width: 40%;
+    		float: left;
+    		font-size: 0.21rem;
+    		text-align: center;
+    		line-height: 1.3rem;
+    		background: url(../img/caiji.png) no-repeat center 30%;
+    		background-size: 0.3rem;
+    		height: 100%;
+    	}
+    	#wd{
+    		width: 30%;
+    		float: left;
+    		font-size: 0.21rem;
+    		text-align: center;
+    		line-height: 1.3rem;
+    		background: url(../img/wode1.png) no-repeat center 30%;
+    		background-size: 0.3rem;
+    		height: 100%;
+    	}
+    
+    
+    </style>
+</head>
+<body>
+	<div class="box">
+		
+		<header><img style="width: .25rem;height: .25rem;position: absolute;top: 0.3rem;left: 0.3rem;" onclick="window.location.href='wode.html'" src="../img/fanhui.png"/>修改密码</header>
+	
+		<div class="zhong">
+			<li id="jmm" class='row' style="border-bottom: 1px solid #f2f2f2;">旧密码:<input id="jtext" style="border: none;width:3.6rem;font-size:.28rem;color:gray;padding: .02rem  .04rem;margin-right: .1rem;outline: none;" type="text" placeholder="请输入旧密码"/>
+				<span id="jqc" style="display:none;width:.3rem;height: .3rem;border-radius: 50%;background:#f2f2f2;color: #fff;text-align: center;">×</span>
+			</li>
+			<li id="ts1" class="tips" style="display:none;height: .4rem;padding: .1rem 0 .05rem .6rem;color: red;font-size: .24rem;margin-left: .5rem;">旧密码错误请重试</li>
+			<li id="xmm" class='row'>新密码:<input id="xtext" style="border: none;width:3.6rem;font-size:.28rem;color:gray;padding: .02rem .04rem;margin-right: .1rem;outline: none;" type="text" placeholder="密码由6-20位数字/字母/字符"/>
+				<span id="xqc" style="display:none;width: .3rem;height: .3rem;border-radius: 50%;background:#f2f2f2;color: #fff;text-align: center;">×</span>
+			</li>
+			<li id="ts2" class="tips" style="display:none;height: .4rem;padding: .1rem 0 .05rem .6rem;color: red;font-size: .24rem;margin-left: .5rem;"></li>
+			<button id='qd'>确定	</button>
+		</div>	
+		<footer>
+			<p id="rwgl">任务管理</p>
+			<p id="hc">采集</p>
+			<p id="wd">我的</p>
+		</footer>
+	</div>
+</body>
+<script type="text/javascript">
+	//任务管理
+	$('#rwgl').tap(function(){
+		window.location.href = 'renwuguanliweijieshou.html';
+	})
+	//采集
+	$('#hc').tap(function(){
+		window.location.href = 'caiji.html';
+	})
+	//我的
+	$('#wd').tap(function(){
+		window.location.href = 'wode.html';
+	})
+	var Data = {};
+	$('#qd').click(function(){
+        if($('#xtext').val()){
+			var t=/(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,20}$/.test($('#xtext').val());
+			if(t)
+			{
+			   $("#ts2").css({'display':'none'})
+			}else{
+	           $("#ts2").css({'display':'block'})
+			}
+		}else{
+			$("#ts2").css({'display':'block'});
+			$("#ts2").text("新密码不为空");
+		}
+		if($('#jtext').val()){
+			$("#ts1").css({'display':'none'});
+		}else{
+			$("#ts1").css({'display':'block'});
+			$("#ts1").text("旧密码不为空");
+		}
+	});
+	$('#jtext').focus(function(){
+		$("#jqc").css({'display':'inline-block'});
+		$("#ts1").css({'display':'none'});
+	});
+	$('#jtext').blur(function(){
+		if($('#jtext').val()){
+		    Data.mobile = localStorage.getItem('mobile');
+			Data.password = $('#jtext').val();
+			Data.IP = 'http://www.baidu.com'
+			$.ajax({
+	            url: 'http://api.xiaofen809.com:8080/mobile/login',
+	            type: 'POST',
+	            async: false,
+	            data: Data,
+	            success: function(data) {
+	                if(data.code == 200){
+		              	$("#ts1").css({'display':'none'})
+	                }else if(data.data.error == 'moblie not match password'){
+	                	$("#ts1").css({'display':'block'})
+	                }else if(data.data.error == 'moblie error'){
+	                	alert('手机号码错误');
+	                }
+	            },
+	            error: function(data) {
+	                console.log(data);
+	            }
+	        });
+	    }
+	})
+	$('#xtext').focus(function(){
+		$("#xqc").css({'display':'inline-block'});
+		$("#ts2").css({'display':'none'});
+	})
+	$('#xtext').blur(function(){
+		if($('#xtext').val()){
+			var t=/(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,20}$/.test($('#xtext').val());
+			if(t)
+			{
+			   $("#ts2").css({'display':'none'})
+			}else{
+	           $("#ts2").css({'display':'block'})
+	           $("#ts2").text("密码至少有数字、字母或字符的两位组合");
+			}
+		}
+	})
+	$('#jqc').click(function(){
+		$("#jtext").val("");
+		$("#ts1").css({'display':'none'})
+	})
+	$('#xqc').click(function(){
+		$("#xtext").val("");
+		$("#ts2").css({'display':'none'})
+	})
+    </script>
+</html>

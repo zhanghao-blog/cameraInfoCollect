@@ -1,0 +1,308 @@
+{
+	"html/renwuguanlijinxingzhong.html": {
+		"resources": [
+			"html/kaishicaiji.html",
+			"html/renwuguanlishenhezhong.html",
+			"html/renwuguanliweijieshou.html",
+			"img/caiji2.png",
+			"img/wode.png",
+			"img/caiji1.png",
+			"html/caiji.html",
+			"img/xiaxian.png",
+			"js/zepto-touch.js",
+			"js/zepto.js",
+			"js/rem.js",
+			"img/renwuguanli1.png",
+			"img/caiji.png",
+			"js/interface.js",
+			"html/weitongguo.html"
+		],
+		"refer": [
+			"html/kaishicaiji.html",
+			"html/renwuguanlishenhezhong.html",
+			"html/renwuguanliweijieshou.html",
+			"html/caiji.html",
+			"html/weitongguo.html"
+		]
+	},
+	"html/renwuguanliweijieshou.html": {
+		"resources": [
+			"html/renwuguanlijinxingzhong.html",
+			"img/caiji2.png",
+			"img/wode.png",
+			"img/caiji1.png",
+			"img/xiaxian.png",
+			"html/renwuguanlishenhezhong.html",
+			"html/caiji.html",
+			"js/zepto-touch.js",
+			"js/zepto.js",
+			"js/rem.js",
+			"html/wode.html",
+			"img/renwuguanli1.png",
+			"img/caiji.png",
+			"html/renwuxiangqing.html"
+		],
+		"refer": [
+			"html/renwuguanlijinxingzhong.html",
+			"html/renwuguanlishenhezhong.html",
+			"html/caiji.html",
+			"html/renwuxiangqing.html",
+			"html/wode.html"
+		]
+	},
+	"index.html": {
+		"resources": [
+			"html/renwuguanliweijieshou.html",
+			"img/jinghui.png",
+			"img/beijing.png",
+			"js/zepto-touch.js",
+			"js/zepto.js",
+			"js/rem.js",
+			"img/mima.png",
+			"img/yonghu.png",
+			"js/interface.js"
+		],
+		"refer": [
+			"html/renwuguanliweijieshou.html"
+		]
+	},
+	"html/kaishicaiji.html": {
+		"resources": [
+			"js/theme/images/cursors/Pan.cur",
+			"js/libs/SuperMap_Plot-8.1.1-14426.js",
+			"js/theme/default/style.css",
+			"html/renwuxiangqing.html",
+			"js/libs/SuperMap-8.1.1-14426.js",
+			"js/theme/default/google.css",
+			"img/fanhui.png",
+			"js/libs/Lang/zh-CN.js",
+			"js/libs/SuperMap.Include.js",
+			"html/renwuguanlishenhezhong.html",
+			"html/renwuguanlijinxingzhong.html",
+			"js/theme/images/cursors/PanDown.cur",
+			"js/zepto-touch.js",
+			"js/zepto.js",
+			"js/rem.js",
+			"img/dw.png",
+			"html/ditu.html",
+			"js/mapUrl.js"
+		],
+		"refer": [
+			"html/renwuxiangqing.html",
+			"html/renwuguanlishenhezhong.html",
+			"html/renwuguanlijinxingzhong.html",
+			"html/ditu.html"
+		]
+	},
+	"html/shenghexiangqing1.html": {
+		"resources": [
+			"img/ditu.png",
+			"js/theme/default/style.css",
+			"js/theme/default/google.css",
+			"html/xiugaicaiji1.html",
+			"js/libs/SuperMap_Plot-8.1.1-14426.js",
+			"js/libs/SuperMap-8.1.1-14426.js",
+			"img/fanhui.png",
+			"js/libs/SuperMap.Include.js",
+			"html/renwuguanlishenhezhong.html",
+			"js/theme/images/cursors/Pan.cur",
+			"img/dw.png",
+			"js/zepto-touch.js",
+			"js/zepto.js",
+			"js/libs/Lang/zh-CN.js",
+			"js/rem.js"
+		],
+		"refer": [
+			"html/xiugaicaiji1.html",
+			"html/renwuguanlishenhezhong.html"
+		]
+	},
+	"html/xiugaicaiji1.html": {
+		"resources": [
+			"js/theme/default/style.css",
+			"img/picfl.png",
+			"js/theme/default/google.css",
+			"html/renwuguanlishenhezhong.html",
+			"html/shenghexiangqing1.html",
+			"html/ditu.html",
+			"js/theme/images/cursors/Pan.cur",
+			"js/libs/SuperMap_Plot-8.1.1-14426.js",
+			"js/libs/SuperMap-8.1.1-14426.js",
+			"img/dw.png",
+			"img/fanhui.png",
+			"js/zepto-touch.js",
+			"js/zepto.js",
+			"js/rem.js",
+			"js/libs/SuperMap.Include.js",
+			"js/libs/Lang/zh-CN.js"
+		],
+		"refer": [
+			"html/renwuguanlishenhezhong.html",
+			"html/shenghexiangqing1.html",
+			"html/ditu.html"
+		]
+	},
+	"html/renwuguanlishenhezhong.html": {
+		"resources": [
+			"html/shenghexiangqing1.html",
+			"img/caiji2.png",
+			"img/wode.png",
+			"img/caiji1.png",
+			"img/xiaxian.png",
+			"html/caiji.html",
+			"html/renwuguanlijinxingzhong.html",
+			"html/renwuguanliyiwancheng.html",
+			"html/wode.html",
+			"img/renwuguanli1.png",
+			"img/caiji.png",
+			"html/renwuguanliweijieshou.html"
+		],
+		"refer": [
+			"html/shenghexiangqing1.html",
+			"html/caiji.html",
+			"html/renwuguanlijinxingzhong.html",
+			"html/renwuguanliyiwancheng.html",
+			"html/renwuguanliweijieshou.html",
+			"html/wode.html"
+		]
+	},
+	"html/caiji.html": {
+		"resources": [
+			"html/renwuguanlishenhezhong.html",
+			"html/renwuguanlijinxingzhong.html",
+			"js/theme/images/cursors/Pan.cur",
+			"js/libs/SuperMap_Plot-8.1.1-14426.js",
+			"js/libs/SuperMap-8.1.1-14426.js",
+			"img/fanhui.png",
+			"js/libs/SuperMap.Include.js",
+			"js/theme/images/cursors/PanDown.cur",
+			"img/dw.png",
+			"js/zepto-touch.js",
+			"js/zepto.js",
+			"js/rem.js",
+			"html/ditu.html",
+			"html/renwuguanliweijieshou.html",
+			"js/theme/default/style.css",
+			"js/theme/default/google.css",
+			"js/libs/Lang/zh-CN.js",
+			"html/xiugaimima1.html",
+			"html/wode.html",
+			"js/mapUrl.js"
+		],
+		"refer": [
+			"html/renwuguanlishenhezhong.html",
+			"html/renwuguanlijinxingzhong.html",
+			"html/ditu.html",
+			"html/renwuguanliweijieshou.html"
+		]
+	},
+	"html/renwuguanliyiwancheng.html": {
+		"resources": [
+			"html/renwuguanlishenhezhong.html",
+			"img/caiji2.png",
+			"img/wode.png",
+			"img/caiji1.png",
+			"img/xiaxian.png",
+			"js/zepto-touch.js",
+			"js/zepto.js",
+			"js/rem.js",
+			"html/caiji.html",
+			"html/renwuguanlijinxingzhong.html",
+			"html/renwuguanliweijieshou.html"
+		],
+		"refer": [
+			"html/renwuguanlishenhezhong.html",
+			"html/renwuguanlijinxingzhong.html",
+			"html/renwuguanliweijieshou.html",
+			"html/caiji.html"
+		]
+	},
+	"html/ditu.html": {
+		"resources": [
+			"img/mark.png",
+			"img/left.png",
+			"html/caiji.html",
+			"js/theme/images/cursors/Pan.cur",
+			"js/libs/SuperMap_Plot-8.1.1-14426.js",
+			"js/libs/SuperMap-8.1.1-14426.js",
+			"js/zepto-touch.js",
+			"js/zepto.js",
+			"js/rem.js",
+			"js/libs/SuperMap.Include.js",
+			"img/dw.png",
+			"js/theme/images/cursors/PanDown.cur",
+			"html/xiugaicaiji1.html",
+			"js/theme/default/style.css",
+			"js/theme/default/google.css",
+			"html/kaishicaiji.html"
+		],
+		"refer": [
+			"html/caiji.html",
+			"html/xiugaicaiji1.html",
+			"html/kaishicaiji.html"
+		]
+	},
+	"html/wode.html": {
+		"resources": [
+			"img/wode1.png",
+			"html/xiugaimima1.html",
+			"img/caiji.png",
+			"img/woderight.png",
+			"img/caiji1.png",
+			"html/renwuguanliweijieshou.html",
+			"html/caiji.html",
+			"img/renwuguanli.png",
+			"img/wode.png"
+		],
+		"refer": [
+			"html/xiugaimima1.html",
+			"html/renwuguanliweijieshou.html"
+		]
+	},
+	"html/xiugaimima1.html": {
+		"resources": [
+			"js/libs/SuperMap_Plot-8.1.1-14426.js",
+			"js/theme/default/style.css",
+			"js/libs/SuperMap-8.1.1-14426.js",
+			"js/theme/default/google.css",
+			"img/fanhui.png",
+			"js/libs/Lang/zh-CN.js",
+			"js/libs/SuperMap.Include.js",
+			"html/wode.html",
+			"html/caiji.html",
+			"html/renwuguanliweijieshou.html",
+			"img/wode1.png"
+		],
+		"refer": [
+			"html/wode.html"
+		]
+	},
+	"html/renwuxiangqing.html": {
+		"resources": [
+			"img/fanhui.png",
+			"html/kaishicaiji.html",
+			"html/renwuguanlijinxingzhong.html"
+		],
+		"refer": [
+			"html/kaishicaiji.html",
+			"html/renwuguanlijinxingzhong.html"
+		]
+	},
+	"html/weitongguo.html": {
+		"resources": [
+			"js/theme/images/cursors/Pan.cur",
+			"js/libs/SuperMap_Plot-8.1.1-14426.js",
+			"js/theme/default/style.css",
+			"js/libs/SuperMap-8.1.1-14426.js",
+			"js/mapUrl.js",
+			"js/theme/default/google.css",
+			"img/fanhui.png",
+			"js/libs/Lang/zh-CN.js",
+			"js/libs/SuperMap.Include.js",
+			"html/renwuguanlijinxingzhong.html"
+		],
+		"refer": [
+			"html/renwuguanlijinxingzhong.html"
+		]
+	}
+}

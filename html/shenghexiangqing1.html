@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta name="misapplication-tap-highlight" content="no"/>
+	<meta name="HandheldFriendly" content="true"/>
+	<meta name="MobileOptimized" content="320"/>
+    <script src="../js/zepto.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/zepto-touch.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="../js/libs/SuperMap.Include.js"></script>
+    <script src="../js/interface.js" type="text/javascript" charset="utf-8"></script>
+    <title></title>
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	a{
+    		text-decoration: none;
+    	}
+    	li{
+    		list-style: none;
+    	}
+    	html,body{
+    		height: 100%;
+    	}
+    	.box{
+    		height: 100%;
+    		width: 100%;
+    		display: -webkit-box;
+    		display: -moz-box;
+    		display: box;
+    		-webkit-box-orient: vertical;
+    		-moz-box-orient: vertical;
+    		box-orient:vertical;
+    		background: #f2f2f2;
+    	}
+    	header{
+    		height: 0.90rem;
+    		background: #1558a7;
+    		font-size: 0.34rem;
+    		line-height: 0.90rem;
+    		text-align: center;
+    		color: #feffff;
+    	}
+    
+    	.zhong{
+    		-webkit-box-flex: 1;
+    		-moz-box-flex: 1;
+    		box-flex:1;
+    		background: #f2f2f2;
+    		overflow-y: scroll;
+    		position: relative;
+    		font-size: 0.26rem;
+    		color: gray;
+    	}
+    	input[type="text"]{
+    		margin-right: .1rem;
+    		height: 0.58rem;
+    		width: 54%;
+    		float: right;
+    		outline:none;
+    		border: none;
+    		background: none;
+    	}
+    	.zhong_d1{
+    		height: 2.75rem;
+    		padding-bottom: .1rem;
+    		border-bottom: 1px solid #DCDCDC;
+    		width: 90%;
+    		margin: 0 auto;
+    	}
+    	.zhong_d1_u1{
+    		width: 100%;
+    		height: 2.1rem;
+    	}
+    	.zhong_d1_u1 li{
+    		margin-bottom: .2rem;
+    	}
+    	.rq{
+    		font-size: 0.24rem;
+    		color: #9f9f9f;
+    		float: right;
+    		margin-right: 0.2rem;
+    	}
+    	.zhong_d2{
+    		font-size: 0.26rem;
+    		overflow: hidden;
+    		width: 90%;
+    		margin: 0.2rem auto;
+    		padding-left: 0.2rem;
+    	}
+    	.rwbh{
+    		font-size: 0.23rem;
+    		color: #a3a3a3;
+    		margin: 0.26rem 0 0 0;
+    	}
+    	#map{
+    		width: 96%;
+    		height: 78%;
+    		border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
+    		border: none;
+    	}
+    
+    	footer{
+    		height: 0.88rem;
+    		background: #1558a7;
+    		font-size: 0.32rem;
+    		line-height: 0.88rem;
+    		text-align: center;
+    		color: #fff;
+    	}
+    	.wzcj{
+    		width: 94%;
+    		height: 3.66rem;
+    		position: absolute;
+    		top: 3.3rem;
+    		left: 0.2rem;
+    		background: rgba(0,0,0,0);
+    		border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
+    		z-index: 2999;
+    	}
+    </style>
+</head>
+<body>
+	<div class="box">
+		<header><img style="width: .25rem;height: .25rem;position: absolute;top: 0.3rem;left: 0.3rem;" onclick="window.location.href = 'renwuguanlishenhezhong.html'" src="../img/fanhui.png"/>审核详情</header>
+		<div class="zhong">
+		    <div id="wei" class="zhong_d1">
+			</div>
+			<div id="zz1" class="zhong_d1">
+				<li style="font-size: 0.26rem;line-height: 0.6rem;">位置采集：</li>
+				<div  id="map"></div>
+			</div>
+			<div class="wzcj">
+				
+			</div>
+			<div id="zz2" class="zhong_d2">
+				<li id="feedimgs" style="margin-top: 0.2rem;overflow:hidden">
+					<span style="margin-right:0.4rem;float: left;height: 1.2rem;line-height: 1.2rem;">图像采集：</span>
+				</li>
+				<div id="camAttr">
+					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头编号：<input disabled="disabled" type="text" id="sxtbh" /></li>
+					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头纬度：<input disabled="disabled" type="text" id="sxtwd" /></li>
+					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头经度：<input disabled="disabled" type="text" id="sxtjd" /></li>
+					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头描述信息：<input disabled="disabled" type="text" id="sxtms" /></li>
+				</div>
+			</div>
+		</div>
+		<footer id="xg">
+			修&nbsp;改
+		</footer>
+	</div>
+</body>
+<script type="text/javascript">
+	var html='';
+    html+="<ul class='zhong_d1_u1'>"+
+	      "<div class='weizhi_d1'>"+
+	      "<li class='rwbh'>任务编号："+sessionStorage.getItem('taskNO')+"<span class='rq'>17/10/22</span></li>"+
+	      "<li class='weizhi'>位置："+sessionStorage.getItem('cameraLocation')+"</li>"+
+	      "</div><li class='shextname'>摄像头名称："+sessionStorage.getItem('cameraName')+"</li>"+
+	      "<li class='cjnr'>采集内容："+sessionStorage.getItem('taskDescription')+"</li>"+
+	      "</ul>"
+	$('#wei').append(html);
+
+	//获取摄像头属性
+	var date1;
+	var mobile=localStorage.getItem('mobile');
+	var token=localStorage.getItem('token');
+	var userId=localStorage.getItem('userId');
+	function getCameraAttr(){
+        	$.ajax({
+				  url: local+"/camera/getCameraAttrs_APP",
+				  type: 'POST',
+				  async: false,
+				  data:{
+				   	mobile:mobile,
+   					token:token,
+	            	type:1
+				  },
+				success:function(data){
+	        		date1 = data.data.rows;
+	        		var html1='';
+	        		var Data={};
+	        		Data.mobile = localStorage.getItem('mobile')
+					Data.token = localStorage.getItem('token')
+	        		Data.taskId = sessionStorage.getItem('taskId')
+					$.ajax({
+			            url: local+"/task/getTaskByIdAPP",
+			            type: 'POST',
+			            data: Data,
+			            success: function(data) {
+			            	console.log(data)
+			               cameraExtra = JSON.parse(data.taskFeedBacks[0].cameraExtra);
+			               cameraImgFeed=data.taskFeedBacks[0].taskFeedBackPics;
+			              //加载图片
+			              var html0='';
+			               for(var j=0;j<cameraImgFeed.length;j++)
+			               {
+			               	   html0+="<img style='width: 1.2rem;height: 1.2rem;' src='"+cameraImgFeed[j].url+"'>"
+			               }
+			               $('#feedimgs').append(html0);
+			               //加载摄像头属性列
+			                $('#sxtbh').val(cameraExtra[0].cam_no)
+			            	$('#sxtwd').val(cameraExtra[6].cam_loc_lan)
+			            	$('#sxtjd').val(cameraExtra[7].cam_loc_lon)
+			            	$('#sxtms').val(cameraExtra[8].cam_desc)
+				                for(var i=11;i<cameraExtra.length;i++)
+				                {
+				                	var attrname = cameraExtra[i]
+				            		for(key in attrname){
+//				            			console.log(key)
+				            		}
+				            			html1+="<li style='margin: 0.2rem 0;overflow: hidden;'>"+date1[i-11].attr_desc+":<input disabled='disabled' type='text' name='' id='"+date1[i-11].attr_name+"' value='"+attrname[key]+"' /></li>"
+				                }
+			                $('#camAttr').append(html1);							
+			            },
+			            error: function(data) {
+			                console.log(data);
+			            }
+			    });
+	        	},
+				error: function(data) {
+		                console.log(data);
+		        }
+			})
+    }
+	getCameraAttr();
+    window.addEventListener('resize', function () {
+    	if(document.activeElement.tagName == 'INPUT' || document.activeElement.tagName == 'TEXTAREA') {
+	        window.setTimeout(function () {
+	        	document.activeElement.scrollIntoViewIfNeeded();
+	        }, 0);
+    	}
+    })
+	//点击修改页面跳转
+    $('#xg').click(function(){
+    	window.location.href ='xiugaicaiji1.html';
+    })
+    //离开
+    $(function(){
+		document.addEventListener( "plusready", function(){
+			plus.key.addEventListener("backbutton",function(){
+				javascript:history.go(-1)
+			}); 
+		}, false );
+	})
+</script>
+<!--加载地图-->
+<script type="text/javascript" src="../js/mapUrl.js"></script>  <!--一定要div map后引用-->
+<script type="text/javascript">
+    function markercenter(){
+    	if(sessionStorage.getItem('x2')){
+    		//alert(sessionStorage.getItem('x1')+' '+sessionStorage.getItem('y1'));
+    		positionMarker.clearMarkers();
+    		//var lonLat = map.getCenter();
+    		var lonLat = new SuperMap.LonLat(sessionStorage.getItem('x2'), sessionStorage.getItem('y2'));
+			size = new SuperMap.Size(21, 33);
+			offset = new SuperMap.Pixel(-(size.w/2), -size.h);
+			icon = new SuperMap.Icon("../img/dw.png", size, offset);
+			positionMarker.addMarker(new SuperMap.Marker(lonLat, icon));
+			map.setCenter(lonLat);
+			map.pan(0.000001, 0);
+    	}
+    }
+    markercenter();
+</script>
+</html>
