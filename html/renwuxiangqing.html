@@ -4,231 +4,258 @@
     <meta charset="utf-8">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-	<meta name="misapplication-tap-highlight" content="no"/>
-	<meta name="HandheldFriendly" content="true"/>
-	<meta name="MobileOptimized" content="320"/>
-	<script src="../js/zepto.js" type="text/javascript" charset="utf-8"></script>
+    <meta name="misapplication-tap-highlight" content="no"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="MobileOptimized" content="320"/>
+    <script src="../js/zepto.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/zepto-touch.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/rem.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/interface.js" type="text/javascript" charset="utf-8"></script>
     <title></title>
     <style type="text/css">
-    	*{
-    		margin: 0;
-    		padding: 0;
-    	}
-    	a{
-    		text-decoration: none;
-    	}
-    	li{
-    		list-style: none;
-    	}
-    	html,body{
-    		height: 100%;
-    	}
-    	.box{
-    		height: 100%;
-    		width: 100%;
-    		background: #f2f2f2;
-    		position: relative;
-    	}
-    	header{
-    		height: 0.90rem;
-    		background: #1558a7;
-    		font-size: 0.34rem;
-    		line-height: 0.90rem;
-    		text-align: center;
-    		color: #feffff;
-    		position: absolute;
-    		left: 0;
-    		right: 0;
-    	}
-    	.zhong{
-    		position: absolute;
-    		top: 0.90rem;
-    		bottom: 0.88rem;
-    		left: 0;
-    		right: 0;
-    		background: #f2f2f2;
-    		overflow-y: scroll;
-    	}
-    	.zhong_d1{
-    		height: 2.9rem;
-    		border-bottom: 1px solid #DCDCDC;
-    		width: 90%;
-    		margin: 0 auto;
-    	}
-    	.zhong_d1_u1{
-    		width: 100%;
-    		height: 2.1rem;
-    	}
-    	.zhong_d1_u1 li{
-    		margin-bottom: .2rem;
-    	}
-    	.weizhi{
-    		font-size: 0.30rem;
-    		color: #444444;
-    		width: 100%;
-    		overflow: hidden;
-			text-overflow:ellipsis;
-			white-space: nowrap;
-    	}
-    	.weizhi_d1{
-    		font-size: 0.30rem;
-    		color: #444444;
-    		margin: 0.29rem 0 0 0;
-    		overflow: hidden;
-    	}
-    	.rq{
-    		font-size: 0.24rem;
-    		color: #9f9f9f;
-    		float: right;
-    		margin-right: 0.2rem;
-    	}
-    	.shextname{
-    		font-size: 0.26rem;
-    		color: #666666;
-    		margin: 0.1rem 0 0 0;
-    	}
-    	.cjnr{
-    		font-size: 0.26rem;
-    		color: #666666;
-    	}
-    	.rwbh{
-    		font-size: 0.23rem;
-    		color: #a3a3a3;
-    		width: 55%;
-    		float: left;
-    		overflow: hidden;
-			text-overflow:ellipsis;
-			white-space: nowrap;
-    	}
-    	.zhong_btn1{
-    		width: 0.98rem;
-    		height: 0.48rem;
-    		background: #93a2b9;
-    		border: none;
-    		border-radius: 5%;
-    		font-size: 0.23rem;
-    		color: #fff;
-    	}
-    	.dhbtn{
-    		float: right;
-    		width: 1.6rem;
-    		height: 0.7rem;
-    		border-radius: 10%/20%;
-    		border: none;
-    		margin-right: 0.3rem;
-    		outline: none;
-    		background: #4379b9;
-    		color: #FFFFFF;
-    		font-size: 0.28rem;
-    		z-index: 999;
-    	}
-    	footer{
-    		height: 0.88rem;
-    		background: #1558a7;
-    		font-size: 0.32rem;
-    		line-height: 0.88rem;
-    		text-align: center;
-    		color: #fff;
-    		z-index: 99;
-    		position: absolute;
-    		bottom: 0;
-    		left: 0;
-    		right: 0;
-    	}
-    	#rwgl{
-    		width: 30%;
-    		float: left;
-    		font-size: 0.21rem;
-    		text-align: center;
-    		line-height: 1.3rem;
-    		background: url(../img/caiji.png) no-repeat center 30%;
-    		background-size: 0.3rem;
-    		height: 100%;
-    	}
-    	#hc{
-    		width: 40%;
-    		float: left;
-    		font-size: 0.21rem;
-    		text-align: center;
-    		line-height: 1.3rem;
-    		background: url(../img/weichuan1.png) no-repeat center 30%;
-    		background-size: 0.3rem;
-    		height: 100%;
-    	}
-    	#wd{
-    		width: 30%;
-    		float: left;
-    		font-size: 0.21rem;
-    		text-align: center;
-    		line-height: 1.3rem;
-    		background: url(../img/wode1.png) no-repeat center 30%;
-    		background-size: 0.3rem;
-    		height: 100%;
-    	}
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .box {
+            height: 100%;
+            width: 100%;
+            background: #f2f2f2;
+            position: relative;
+        }
+
+        header {
+            height: 0.90rem;
+            background: #1558a7;
+            font-size: 0.34rem;
+            line-height: 0.90rem;
+            text-align: center;
+            color: #feffff;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        .zhong {
+            position: absolute;
+            top: 0.90rem;
+            bottom: 0.88rem;
+            left: 0;
+            right: 0;
+            background: #f2f2f2;
+            overflow-y: scroll;
+        }
+
+        .zhong_d1 {
+            height: 2.9rem;
+            border-bottom: 1px solid #DCDCDC;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .zhong_d1_u1 {
+            width: 100%;
+            height: 2.1rem;
+        }
+
+        .zhong_d1_u1 li {
+            margin-bottom: .2rem;
+        }
+
+        .weizhi {
+            font-size: 0.30rem;
+            color: #444444;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .weizhi_d1 {
+            font-size: 0.30rem;
+            color: #444444;
+            margin: 0.29rem 0 0 0;
+            overflow: hidden;
+        }
+
+        .rq {
+            font-size: 0.24rem;
+            color: #9f9f9f;
+            float: right;
+            margin-right: 0.2rem;
+        }
+
+        .shextname {
+            font-size: 0.26rem;
+            color: #666666;
+            margin: 0.1rem 0 0 0;
+        }
+
+        .cjnr {
+            font-size: 0.26rem;
+            color: #666666;
+        }
+
+        .rwbh {
+            font-size: 0.23rem;
+            color: #a3a3a3;
+            width: 55%;
+            float: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .zhong_btn1 {
+            width: 0.98rem;
+            height: 0.48rem;
+            background: #93a2b9;
+            border: none;
+            border-radius: 5%;
+            font-size: 0.23rem;
+            color: #fff;
+        }
+
+        .dhbtn {
+            float: right;
+            width: 1.6rem;
+            height: 0.7rem;
+            border-radius: 10%/20%;
+            border: none;
+            margin-right: 0.3rem;
+            outline: none;
+            background: #4379b9;
+            color: #FFFFFF;
+            font-size: 0.28rem;
+            z-index: 999;
+        }
+
+        footer {
+            height: 0.88rem;
+            background: #1558a7;
+            font-size: 0.32rem;
+            line-height: 0.88rem;
+            text-align: center;
+            color: #fff;
+            z-index: 99;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        #rwgl {
+            width: 30%;
+            float: left;
+            font-size: 0.21rem;
+            text-align: center;
+            line-height: 1.3rem;
+            background: url(../img/caiji.png) no-repeat center 30%;
+            background-size: 0.3rem;
+            height: 100%;
+        }
+
+        #hc {
+            width: 40%;
+            float: left;
+            font-size: 0.21rem;
+            text-align: center;
+            line-height: 1.3rem;
+            background: url(../img/weichuan1.png) no-repeat center 30%;
+            background-size: 0.3rem;
+            height: 100%;
+        }
+
+        #wd {
+            width: 30%;
+            float: left;
+            font-size: 0.21rem;
+            text-align: center;
+            line-height: 1.3rem;
+            background: url(../img/wode1.png) no-repeat center 30%;
+            background-size: 0.3rem;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
-	<div class="box">
-		<header><img style="width: .25rem;height: .25rem;position: absolute;top: 0.3rem;left: 0.3rem;" onclick="window.location.href = 'renwuguanliweijieshou.html'" src="../img/fanhui.png"/>任务详情</header>
-		<div class="zhong">
-		</div>
-		<footer onclick="kscaiji()">
-			开始采集
-		</footer>
-	</div>
+<div class="box">
+    <header><img style="width: .25rem;height: .25rem;position: absolute;top: 0.3rem;left: 0.3rem;"
+                 onclick="window.location.href = 'renwuguanliweijieshou.html'" src="../img/fanhui.png"/>任务详情
+    </header>
+    <div class="zhong">
+    </div>
+    <footer onclick="kscaiji()">
+        开始采集
+    </footer>
+</div>
 </body>
 <script type="text/javascript">
-	var mobile=localStorage.getItem('mobile');
-	var token=localStorage.getItem('token');
-	//界面刷新内容
-	function neirong(){
-		var html='';
-		html+="<div class='zhong_d1'>"+
-		  "<ul class='zhong_d1_u1'>"+
-		  "<div class='weizhi_d1'>"+
-		  "<li class='rwbh'>任务编号："+sessionStorage.getItem('taskNO')+"</li><span class='rq'>17/10/22</span>"+
-		  "<li class='weizhi'>位置："+sessionStorage.getItem('cameraLocation')+"</li>"+
-		  "</div><li class='shextname'>摄像头名称："+sessionStorage.getItem('cameraName')+"</li>"+
-		  "<li class='cjnr'>采集内容："+sessionStorage.getItem('taskDescription')+"</li>"+
-		  "</ul></div>"
-		     
-		 $('.zhong').append(html);
-	};
-	neirong()
-	//修改任务进度
-	function acceptTask(taskId){
-		var Data = {};
-		Data.mobile =mobile,
-	    Data.token = token,
-	    Data.taskId = taskId,
-		$.ajax({
-            url: local+'/task/acceptTaskStatus_App',
-            type: 'POST',
-            data: Data,
-            success: function(data) {
-                console.log(JSON.stringify(data));
-            },
-            error: function(data) {
-                console.log(data);
-            }
-    	});
-	}
-	//开始采集按钮
-	function kscaiji(){
-	 	acceptTask(sessionStorage.getItem('taskId'))
-	 	window.location.href='kaishicaiji.html';
-	 	
-	}
-	//监听返回事件
-	$(function(){
-		document.addEventListener( "plusready", function(){
-			plus.key.addEventListener("backbutton",function(){ 
-				window.location.href='renwuguanlijinxingzhong.html'
-			}); 
-		}, false );
-	})
+    var mobile = localStorage.getItem('mobile');
+    var token = localStorage.getItem('token');
+
+    //界面刷新内容
+    function neirong() {
+        var html = '';
+        html += "<div class='zhong_d1'>" +
+            "<ul class='zhong_d1_u1'>" +
+            "<div class='weizhi_d1'>" +
+            "<li class='rwbh'>任务编号：" + sessionStorage.getItem('taskNO') + "</li><span class='rq'>17/10/22</span>" +
+            "<li class='weizhi'>位置：" + sessionStorage.getItem('cameraLocation') + "</li>" +
+            "</div><li class='shextname'>摄像头名称：" + sessionStorage.getItem('cameraName') + "</li>" +
+            "<li class='cjnr'>采集内容：" + sessionStorage.getItem('taskDescription') + "</li>" +
+            "</ul></div>"
+
+        $('.zhong').append(html);
+    };
+    neirong()
+
+    //修改任务进度
+    function acceptTask(taskId) {
+        var Data = {};
+        Data.mobile = mobile,
+            Data.token = token,
+            Data.taskId = taskId,
+            $.ajax({
+                url: local + '/task/acceptTaskStatus_App',
+                type: 'POST',
+                data: Data,
+                success: function (data) {
+                    console.log(JSON.stringify(data));
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+    }
+
+    //开始采集按钮
+    function kscaiji() {
+        acceptTask(sessionStorage.getItem('taskId'))
+        window.location.href = 'kaishicaiji.html';
+
+    }
+
+    //监听返回事件
+    $(function () {
+        document.addEventListener("plusready", function () {
+            plus.key.addEventListener("backbutton", function () {
+                window.location.href = 'renwuguanlijinxingzhong.html'
+            });
+        }, false);
+    })
 </script>
 </html>

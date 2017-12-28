@@ -4,135 +4,157 @@
     <meta charset="utf-8">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-	<meta name="misapplication-tap-highlight" content="no"/>
-	<meta name="HandheldFriendly" content="true"/>
-	<meta name="MobileOptimized" content="320"/>
+    <meta name="misapplication-tap-highlight" content="no"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="MobileOptimized" content="320"/>
     <script src="../js/zepto.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/zepto-touch.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/rem.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/interface.js" type="text/javascript" charset="utf-8"></script>
     <title></title>
     <style type="text/css">
-    	*{
-    		margin: 0;
-    		padding: 0;
-    	}
-    	a{
-    		text-decoration: none;
-    	}
-    	li{
-    		list-style: none;
-    	}
-    	html,body{
-    		height: 100%;
-    	}
-    	.box{
-    		height: 100%;
-    		width: 100%;
-    		display: -webkit-box;
-    		display: -moz-box;
-    		display: box;
-    		-webkit-box-orient: vertical;
-    		-moz-box-orient: vertical;
-    		box-orient:vertical;
-    		background: #f2f2f2;
-    	}
-    	header{
-    		height: 0.90rem;
-    		background: #1558a7;
-    		font-size: 0.34rem;
-    		line-height: 0.90rem;
-    		text-align: center;
-    		color: #feffff;
-    	}
-    	.zhong{
-    		-webkit-box-flex: 1;
-    		-moz-box-flex: 1;
-    		box-flex:1;
-    		background: #f2f2f2;
-    		overflow-y: scroll;
-    	}
-    	footer{
-    		height: 0.88rem;
-    		background: #f2ffff;
-    		border-top: 1px solid #cccccc;
-    		box-shadow: 0px -4px 9px 0px rgba(136,152,177,0.3);
-    		z-index: 99;
-    	}
-    	#rwgl{
-    		width: 30%;
-    		float: left;
-    		font-size: 0.21rem;
-    		text-align: center;
-    		line-height: 1.3rem;
-    		background: url(../img/renwuguanli.png) no-repeat center 30%;
-    		background-size: 0.3rem 0.3rem;
-    		height: 100%;
-    	}
-    	#hc{
-    		width: 40%;
-    		float: left;
-    		font-size: 0.21rem;
-    		text-align: center;
-    		line-height: 1.3rem;
-    		background: url(../img/caiji.png) no-repeat center 30%;
-    		background-size: 0.3rem 0.3rem;
-    		height: 100%;
-    	}
-    	#wd{
-    		width: 30%;
-    		float: left;
-    		font-size: 0.21rem;
-    		text-align: center;
-    		line-height: 1.3rem;
-    		background: url(../img/wode.png) no-repeat center 30%;
-    		background-size: 0.3rem 0.3rem;
-    		height: 100%;
-    	}
-    	
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .box {
+            height: 100%;
+            width: 100%;
+            display: -webkit-box;
+            display: -moz-box;
+            display: box;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            box-orient: vertical;
+            background: #f2f2f2;
+        }
+
+        header {
+            height: 0.90rem;
+            background: #1558a7;
+            font-size: 0.34rem;
+            line-height: 0.90rem;
+            text-align: center;
+            color: #feffff;
+        }
+
+        .zhong {
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            box-flex: 1;
+            background: #f2f2f2;
+            overflow-y: scroll;
+        }
+
+        footer {
+            height: 0.88rem;
+            background: #f2ffff;
+            border-top: 1px solid #cccccc;
+            box-shadow: 0px -4px 9px 0px rgba(136, 152, 177, 0.3);
+            z-index: 99;
+        }
+
+        #rwgl {
+            width: 30%;
+            float: left;
+            font-size: 0.21rem;
+            text-align: center;
+            line-height: 1.3rem;
+            background: url(../img/renwuguanli.png) no-repeat center 30%;
+            background-size: 0.3rem 0.3rem;
+            height: 100%;
+        }
+
+        #hc {
+            width: 40%;
+            float: left;
+            font-size: 0.21rem;
+            text-align: center;
+            line-height: 1.3rem;
+            background: url(../img/caiji.png) no-repeat center 30%;
+            background-size: 0.3rem 0.3rem;
+            height: 100%;
+        }
+
+        #wd {
+            width: 30%;
+            float: left;
+            font-size: 0.21rem;
+            text-align: center;
+            line-height: 1.3rem;
+            background: url(../img/wode.png) no-repeat center 30%;
+            background-size: 0.3rem 0.3rem;
+            height: 100%;
+        }
+
     </style>
- </head>
+</head>
 <body>
-	<div class="box">
-		<header>我的</header>
-		<div class="zhong">
-			<li id="xiugaimima" style="background: #fff;height: 0.88rem;font-size: 0.26rem;line-height: 0.88rem;padding-left: 0.3rem;border-bottom: 1px solid #CCCCCC;">修改密码<img style="float: right;margin: 0.34rem 0.2rem 0 0;width: 0.14rem;height: 0.24rem;" src="../img/woderight.png" alt="" /></li>
-		    <li id="" style="background: #fff;height: 0.88rem;font-size: 0.26rem;line-height: 0.88rem;padding-left: 0.3rem;border-bottom: 1px solid #CCCCCC;">我的申请<img style="float: right;margin: 0.34rem 0.2rem 0 0;width: 0.14rem;height: 0.24rem;" src="../img/woderight.png" alt="" /></li>
-		    <li id="" style="background: #fff;height: 0.88rem;font-size: 0.26rem;line-height: 0.88rem;padding-left: 0.3rem;border-bottom: 1px solid #CCCCCC;">我的消息<img style="float: right;margin: 0.34rem 0.2rem 0 0;width: 0.14rem;height: 0.24rem;" src="../img/woderight.png" alt="" /></li>
-		    <li id="" style="background: #fff;height: 0.88rem;font-size: 0.26rem;line-height: 0.88rem;padding-left: 0.3rem;border-bottom: 1px solid #CCCCCC;">关于本系统<img style="float: right;margin: 0.34rem 0.2rem 0 0;width: 0.14rem;height: 0.24rem;" src="../img/woderight.png" alt="" /></li>
-		</div>
-		<footer>
-			<p id="rwgl">任务管理</p>
-			<p id="hc">采集</p>
-			<p id="wd">我的</p>
-		</footer>
-	</div>
+<div class="box">
+    <header>我的</header>
+    <div class="zhong">
+        <li id="xiugaimima"
+            style="background: #fff;height: 0.88rem;font-size: 0.26rem;line-height: 0.88rem;padding-left: 0.3rem;border-bottom: 1px solid #CCCCCC;">
+            修改密码<img style="float: right;margin: 0.34rem 0.2rem 0 0;width: 0.14rem;height: 0.24rem;"
+                     src="../img/woderight.png" alt=""/></li>
+        <li id=""
+            style="background: #fff;height: 0.88rem;font-size: 0.26rem;line-height: 0.88rem;padding-left: 0.3rem;border-bottom: 1px solid #CCCCCC;">
+            我的申请<img style="float: right;margin: 0.34rem 0.2rem 0 0;width: 0.14rem;height: 0.24rem;"
+                     src="../img/woderight.png" alt=""/></li>
+        <li id=""
+            style="background: #fff;height: 0.88rem;font-size: 0.26rem;line-height: 0.88rem;padding-left: 0.3rem;border-bottom: 1px solid #CCCCCC;">
+            我的消息<img style="float: right;margin: 0.34rem 0.2rem 0 0;width: 0.14rem;height: 0.24rem;"
+                     src="../img/woderight.png" alt=""/></li>
+        <li id=""
+            style="background: #fff;height: 0.88rem;font-size: 0.26rem;line-height: 0.88rem;padding-left: 0.3rem;border-bottom: 1px solid #CCCCCC;">
+            关于本系统<img style="float: right;margin: 0.34rem 0.2rem 0 0;width: 0.14rem;height: 0.24rem;"
+                      src="../img/woderight.png" alt=""/></li>
+    </div>
+    <footer>
+        <p id="rwgl">任务管理</p>
+        <p id="hc">采集</p>
+        <p id="wd">我的</p>
+    </footer>
+</div>
 </body>
 <script type="text/javascript">
-	
-	//任务管理
-	$('#rwgl').tap(function(){
-		window.location.href = 'renwuguanliweijieshou.html';
-	})
-	//采集
-	$('#hc').tap(function(){
-		window.location.href = 'caiji.html';
-	})
-	//我的
-	$('#wd').tap(function(){
-		window.location.href = 'wode.html';
-	})
-	$('#xiugaimima').tap(function(){
-		window.location.href = 'xiugaimima1.html'
-	})
-	$(function(){
-			document.addEventListener( "plusready", function(){
-			// 扩展API加载完毕，现在可以正常调用扩展API
-			// 添加监听从系统消息中心点击某条消息启动应用事件
-				plus.key.addEventListener("backbutton",function(){
-					window.location.href='renwuguanliweijieshou.html'
-				}); 
-			}, false );
-		})
+
+    //任务管理
+    $('#rwgl').tap(function () {
+        window.location.href = 'renwuguanliweijieshou.html';
+    })
+    //采集
+    $('#hc').tap(function () {
+        window.location.href = 'caiji.html';
+    })
+    //我的
+    $('#wd').tap(function () {
+        window.location.href = 'wode.html';
+    })
+    $('#xiugaimima').tap(function () {
+        window.location.href = 'xiugaimima1.html'
+    })
+    $(function () {
+        document.addEventListener("plusready", function () {
+            // 扩展API加载完毕，现在可以正常调用扩展API
+            // 添加监听从系统消息中心点击某条消息启动应用事件
+            plus.key.addEventListener("backbutton", function () {
+                window.location.href = 'renwuguanliweijieshou.html'
+            });
+        }, false);
+    })
 </script>
 </html>

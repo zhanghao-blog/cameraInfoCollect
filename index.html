@@ -4,100 +4,110 @@
     <meta charset="utf-8">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-	<meta name="misapplication-tap-highlight" content="no"/>
-	<meta name="HandheldFriendly" content="true"/>
-	<meta name="MobileOptimized" content="320"/>
+    <meta name="misapplication-tap-highlight" content="no"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="MobileOptimized" content="320"/>
     <script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/zepto-touch.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/interface.js" type="text/javascript" charset="utf-8"></script>
     <title></title>
     <style type="text/css">
-    	*{
-    		margin: 0;
-    		padding: 0;
-    	}
-    	a{
-    		text-decoration: none;
-    	}
-    	li{
-    		list-style: none;
-    	}
-    	html,body{
-    		height: 100%;
-    	}
-    	.box{
-    		height: 100%;
-    		width: 100%;
-    		background: url(img/beijing.png) no-repeat;
-    		background-size: 100% 100%;
-    		overflow: hidden;
-    	}
-    	#dl{
-    		width: 3.93rem;
-    		height: 0.6rem;
-    		margin: 0.4rem auto 0;
-    		display: block;
-    		border-radius: 50px;
-    		border: none;
-    		background: #e8edf3;
-    		color: #155aa7;
-    		font-size: 0.3rem;
-    		line-height: 0.6rem;
-    		outline: none;
-    		border: none;
-    	}
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .box {
+            height: 100%;
+            width: 100%;
+            background: url(img/beijing.png) no-repeat;
+            background-size: 100% 100%;
+            overflow: hidden;
+        }
+
+        #dl {
+            width: 3.93rem;
+            height: 0.6rem;
+            margin: 0.4rem auto 0;
+            display: block;
+            border-radius: 50px;
+            border: none;
+            background: #e8edf3;
+            color: #155aa7;
+            font-size: 0.3rem;
+            line-height: 0.6rem;
+            outline: none;
+            border: none;
+        }
     </style>
 </head>
 <body>
-	<div class="box">
-		<img style="width: 0.78rem;height: 0.79rem;margin: 1.6rem auto 0;display: block;" src="img/jinghui.png"/>
-		<h1 style="margin: 0.63rem auto 0;font-size: 0.5rem;display: block;text-align: center;color: #dce5ec;">移动信息采集系统</h1>
-		<li style="background:rgba(255,255,255,0.9);width: 4.44rem;height: 0.69rem;margin: 2rem auto 0;border-radius: 2%/15%;">
-			<img style="width: 0.28rem;height: 0.4rem;float: left;margin: 0.15rem 0.2rem 0 0.2rem;" src="img/yonghu.png"/>
-			<input placeholder='请输入用户名' style="float: left;height: 0.69rem;border: none;background: rgba(255,255,255,0);width: 3.7rem;outline: none;" type="number" name="" id="username" value="" />
-		</li>
-		<li id="li_password" style="background:rgba(255,255,255,0.9);width: 4.44rem;height: 0.69rem;margin: 0.2rem auto 0;border-radius: 2%/15%;">
-			<img style="width: 0.28rem;height: 0.4rem;float: left;margin: 0.15rem 0.2rem 0 0.2rem;" src="img/mima.png"/>
-			<input placeholder='请输入密码' style="float: left;height: 0.69rem;border: none;background: rgba(255,255,255,0);width: 3.7rem;outline: none;" type="password" name="" id="password" value="" />
-		</li>
-		<button id="dl">登&nbsp;录</button>
-	</div>
+<div class="box">
+    <img style="width: 0.78rem;height: 0.79rem;margin: 1.6rem auto 0;display: block;" src="img/jinghui.png"/>
+    <h1 style="margin: 0.63rem auto 0;font-size: 0.5rem;display: block;text-align: center;color: #dce5ec;">移动信息采集系统</h1>
+    <li style="background:rgba(255,255,255,0.9);width: 4.44rem;height: 0.69rem;margin: 2rem auto 0;border-radius: 2%/15%;">
+        <img style="width: 0.28rem;height: 0.4rem;float: left;margin: 0.15rem 0.2rem 0 0.2rem;" src="img/yonghu.png"/>
+        <input placeholder='请输入用户名'
+               style="float: left;height: 0.69rem;border: none;background: rgba(255,255,255,0);width: 3.7rem;outline: none;"
+               type="number" name="" id="username" value=""/>
+    </li>
+    <li id="li_password"
+        style="background:rgba(255,255,255,0.9);width: 4.44rem;height: 0.69rem;margin: 0.2rem auto 0;border-radius: 2%/15%;">
+        <img style="width: 0.28rem;height: 0.4rem;float: left;margin: 0.15rem 0.2rem 0 0.2rem;" src="img/mima.png"/>
+        <input placeholder='请输入密码'
+               style="float: left;height: 0.69rem;border: none;background: rgba(255,255,255,0);width: 3.7rem;outline: none;"
+               type="password" name="" id="password" value=""/>
+    </li>
+    <button id="dl">登&nbsp;录</button>
+</div>
 </body>
 <script type="text/javascript">
-	$('#dl').tap(function(){
-			var Data = {};
-			Data.mobile = $('#username').val();
-			Data.password = $('#password').val();
-			Data.IP = 'http://www.baidu.com'
-			$.ajax({
-	            url: local+'/mobile/login',
-	            type: 'POST',
-	            data: Data,
-	            success: function(data) {
-	                console.log(JSON.stringify(data.data.Id));
-	                if(data.code == 200){
-		              	localStorage.setItem('token',data.data.token);
-		              	localStorage.setItem('mobile',data.data.mobile);
-		              	localStorage.setItem('userId',data.data.Id);
-		              	window.location.href = 'html/renwuguanliweijieshou.html'
-	                }else if(data.data.error == 'moblie not match password'){
-	                	alert('密码和手机号不匹配');
-	                }else if(data.data.error == 'moblie error'){
-	                	alert('手机号码错误');
-	                }
-	            },
-	            error: function(data) {
-	                console.log(data);
-	            }
-	        });
-		})
-		window.addEventListener('resize', function () {
-	        if (document.activeElement.tagName == 'INPUT' || document.activeElement.tagName == 'TEXTAREA') {
-	            window.setTimeout(function () {
-	            document.activeElement.scrollIntoViewIfNeeded(2);
-	            }, 0);
-	        }
-        })
+    $('#dl').tap(function () {
+        var Data = {};
+        Data.mobile = $('#username').val();
+        Data.password = $('#password').val();
+        Data.IP = 'http://www.baidu.com'
+        $.ajax({
+            url: local + '/mobile/login',
+            type: 'POST',
+            data: Data,
+            success: function (data) {
+                console.log(JSON.stringify(data.data.Id));
+                if (data.code == 200) {
+                    localStorage.setItem('token', data.data.token);
+                    localStorage.setItem('mobile', data.data.mobile);
+                    localStorage.setItem('userId', data.data.Id);
+                    window.location.href = 'html/renwuguanliweijieshou.html'
+                } else if (data.data.error == 'moblie not match password') {
+                    alert('密码和手机号不匹配');
+                } else if (data.data.error == 'moblie error') {
+                    alert('手机号码错误');
+                }
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    })
+    window.addEventListener('resize', function () {
+        if (document.activeElement.tagName == 'INPUT' || document.activeElement.tagName == 'TEXTAREA') {
+            window.setTimeout(function () {
+                document.activeElement.scrollIntoViewIfNeeded(2);
+            }, 0);
+        }
+    })
 </script>
 </html>

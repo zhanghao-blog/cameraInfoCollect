@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-	<meta name="misapplication-tap-highlight" content="no"/>
-	<meta name="HandheldFriendly" content="true"/>
-	<meta name="MobileOptimized" content="320"/>
+    <meta name="misapplication-tap-highlight" content="no"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="MobileOptimized" content="320"/>
     <script src="../js/zepto.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/zepto-touch.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/rem.js" type="text/javascript" charset="utf-8"></script>
@@ -14,670 +14,720 @@
     <script src="../js/interface.js" type="text/javascript" charset="utf-8"></script>
     <title></title>
     <style type="text/css">
-    	*{
-    		margin: 0;
-    		padding: 0;
-    	}
-    	a{
-    		text-decoration: none;
-    	}
-    	li{
-    		list-style: none;
-    	}
-    	html,body{
-    		height: 100%;
-    	}
-    	.box{
-    		height: 100%;
-    		width: 100%;
-    		position: relative;
-    		background: #f2f2f2;
-    	}
-    	header{
-    		height: 0.90rem;
-    		width: 100%;
-    		background: #1558a7;
-    		font-size: 0.34rem;
-    		line-height: 0.90rem;
-    		text-align: center;
-    		color: #feffff;
-    		position: absolute;
-    		top: 0;
-    	}
-    	.shenhe{
-    		min-height: 2.88rem;
-    		width: 90%;
-    		border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
-    		background: #FFFFFF;
-    		font-size: 0.26rem;
-    		margin: 0.2rem auto;
-    		padding-left: 0.2rem;
-    	}
-    	#rwbh_p{
-    		font-size: 0.26rem;
-    		line-height: 0.6rem;
-    	}
-    	#sxtname_p{
-    		line-height: 0.7rem;
-    	}
-    	#rwxq_p{
-    		margin-top: 0.2rem;
-    		line-height: 0.4rem;
-    	}
-    	#mark{
-    		position: relative;
-    		left: .3rem;
-    		bottom:1.2rem;
-    		z-index: 9999;
-    	}
-    	.zhong{
-    		background: #f2f2f2;
-    		overflow-y: scroll;
-    		position: absolute;
-    		top: 0.9rem;
-    		width: 100%;
-    		bottom: 0.88rem;
-    	}
-    	.zhong_d1{
-    		height: 3.66rem;
-    		overflow: hidden;
-    		background: #FFFFFF;
-    		width: 90%;
-    		margin: 0.2rem auto;
-    		border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
-    		border: 1px solid #e5e5e5;
-    		padding-left: 0.2rem;
-    	}
-    	.zhong_d1_u1{
-    		width: 100%;
-    		overflow: hidden;
-    		height: 2.1rem;
-    	}
-    	.zhong_d2{
-    		min-height: 4.04rem;
-    		background: #FFFFFF;
-    		border-radius: 5% 5% 5% 5%;
-    		font-size: 0.26rem;
-    		overflow: hidden;
-    		width: 90%;
-    		margin: 0.2rem auto;
-    		border: 1px solid #e5e5e5;
-    		padding-left: 0.2rem;
-    		
-    	}
-    	.rwbh{
-    		font-size: 0.23rem;
-    		color: #a3a3a3;
-    		margin: 0.26rem 0 0 0;
-    	}
-    	#map{
-    		width: 96%;
-    		height: 78%;
-    		border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
-    		border: none;
-    	}
-    	#sxtxh{
-    		height: 0.58rem;
-    		width: 67%;
-    		border: 1px solid #CCCCCC;
-    		border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
-    	}
-    	#sxtcx{
-    		height: 0.58rem;
-    		width: 67%;
-    		border: 1px solid #CCCCCC;
-    		border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
-    	}
-    	
-    	#sxtgd{
-    		height: 0.58rem;
-    		width: 67%;
-    		border: 1px solid #CCCCCC;
-    		border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
-    	}
-    	input[type="text"]{
-    		margin-right: .1rem;
-    		height: 0.58rem;
-    		width: 54%;
-    		border: 1px solid #CCCCCC;
-    		border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
-    		float: right;
-    		outline:none;
-    	}
-    	textarea{
-        	display: inline-block;
-        	vertical-align: middle;
-        	padding:.1rem .1rem;
-			border: 1px solid #CFCFCF;
-			border-radius: .1rem;
-			margin-left: .14rem;
-			width:51%;
-			outline: none;
-			font-size: .22rem;
-			resize:none;
-			float: right;
-			margin-right: .1rem;
+        * {
+            margin: 0;
+            padding: 0;
         }
-    	footer{
-    		height: 0.88rem;
-    		background: #1558a7;
-    		font-size: 0.32rem;
-    		line-height: 0.88rem;
-    		text-align: center;
-    		position: absolute;
-    		bottom: 0;
-    		width: 100%;
-    		color: #FFFFFF;
-    	}
-    	.liMag{
-    		height: 1.2rem;
-    		width: 1.2rem;
-    		float: left;
-    		border-radius: .1rem;
-    	}
-    	#addPhoto li{
-    		width: 1.2rem;
-    		height: 1.2rem;
-    		float: left;
-    		position: relative;
-    		margin-top: .1rem;
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .box {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            background: #f2f2f2;
+        }
+
+        header {
+            height: 0.90rem;
+            width: 100%;
+            background: #1558a7;
+            font-size: 0.34rem;
+            line-height: 0.90rem;
+            text-align: center;
+            color: #feffff;
+            position: absolute;
+            top: 0;
+        }
+
+        .shenhe {
+            min-height: 2.88rem;
+            width: 90%;
+            border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
+            background: #FFFFFF;
+            font-size: 0.26rem;
+            margin: 0.2rem auto;
+            padding-left: 0.2rem;
+        }
+
+        #rwbh_p {
+            font-size: 0.26rem;
+            line-height: 0.6rem;
+        }
+
+        #sxtname_p {
+            line-height: 0.7rem;
+        }
+
+        #rwxq_p {
+            margin-top: 0.2rem;
+            line-height: 0.4rem;
+        }
+
+        #mark {
+            position: relative;
+            left: .3rem;
+            bottom: 1.2rem;
+            z-index: 9999;
+        }
+
+        .zhong {
+            background: #f2f2f2;
+            overflow-y: scroll;
+            position: absolute;
+            top: 0.9rem;
+            width: 100%;
+            bottom: 0.88rem;
+        }
+
+        .zhong_d1 {
+            height: 3.66rem;
+            overflow: hidden;
+            background: #FFFFFF;
+            width: 90%;
+            margin: 0.2rem auto;
+            border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
+            border: 1px solid #e5e5e5;
+            padding-left: 0.2rem;
+        }
+
+        .zhong_d1_u1 {
+            width: 100%;
+            overflow: hidden;
+            height: 2.1rem;
+        }
+
+        .zhong_d2 {
+            min-height: 4.04rem;
+            background: #FFFFFF;
+            border-radius: 5% 5% 5% 5%;
+            font-size: 0.26rem;
+            overflow: hidden;
+            width: 90%;
+            margin: 0.2rem auto;
+            border: 1px solid #e5e5e5;
+            padding-left: 0.2rem;
+
+        }
+
+        .rwbh {
+            font-size: 0.23rem;
+            color: #a3a3a3;
+            margin: 0.26rem 0 0 0;
+        }
+
+        #map {
+            width: 96%;
+            height: 78%;
+            border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
+            border: none;
+        }
+
+        #sxtxh {
+            height: 0.58rem;
+            width: 67%;
+            border: 1px solid #CCCCCC;
+            border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
+        }
+
+        #sxtcx {
+            height: 0.58rem;
+            width: 67%;
+            border: 1px solid #CCCCCC;
+            border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
+        }
+
+        #sxtgd {
+            height: 0.58rem;
+            width: 67%;
+            border: 1px solid #CCCCCC;
+            border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
+        }
+
+        input[type="text"] {
+            margin-right: .1rem;
+            height: 0.58rem;
+            width: 54%;
+            border: 1px solid #CCCCCC;
+            border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
+            float: right;
+            outline: none;
+        }
+
+        textarea {
+            display: inline-block;
+            vertical-align: middle;
+            padding: .1rem .1rem;
+            border: 1px solid #CFCFCF;
+            border-radius: .1rem;
+            margin-left: .14rem;
+            width: 51%;
+            outline: none;
+            font-size: .22rem;
+            resize: none;
+            float: right;
+            margin-right: .1rem;
+        }
+
+        footer {
+            height: 0.88rem;
+            background: #1558a7;
+            font-size: 0.32rem;
+            line-height: 0.88rem;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            color: #FFFFFF;
+        }
+
+        .liMag {
+            height: 1.2rem;
+            width: 1.2rem;
+            float: left;
+            border-radius: .1rem;
+        }
+
+        #addPhoto li {
+            width: 1.2rem;
+            height: 1.2rem;
+            float: left;
+            position: relative;
+            margin-top: .1rem;
             margin-right: .06rem;
-    	}
-    	.del{
-    		position: absolute;
-    		top: 0;
-    		right: 0;
-    		background: #CCCCCC;
-    		color: #FFFFFF;
-    		border-radius: 50%;
-    		width: 0.3rem;
-    		height: 0.3rem;
-    		line-height: 0.3rem;
-    		text-align: center;
-    	}
-    	#paizhao{
-    		width: 90%;
-    		margin: 0 auto;
-    		height: 0.7rem;
-    		background: #FFFFFF;
-    		border: none;
-    		display: block;
-    		line-height: 0.7rem;
-    		border-bottom: 1px solid #CCCCCC;
-    	}
-    	#addimg{
-    		width: 90%;
-    		margin: 0 auto;
-    		height: 0.7rem;
-    		background: #FFFFFF;
-    		border: none;
-    		display: block;
-    		line-height: 0.7rem;
-    		border-bottom: 1px solid #CCCCCC;
-    	}
-    	#quxiao{
-    		width: 90%;
-    		margin: 0 auto;
-    		height: 0.7rem;
-    		background: #FFFFFF;
-    		border: none;
-    		line-height: 0.7rem;
-    		display: block;
-    		line-height: 0.7rem;
-    		
-    	}
-    	#paixiang{
-    		position: absolute;
-    		top: 0;
-    		width: 100%;
-    		height: 100%;
-    		background: rgba(0,0,0,0.2);
-    		z-index: 2000;
-    	}
-    	#pqx{
-    		width: 90%;
-    		background: #FFFFFF;
-    		height: 2.1rem;
-    		position: absolute;
-    		bottom: 1rem;
-    		left: 5%;
-    		border: 2% 2% 2% 2%/ 5% 5% 5% 5%;
-    	}
-    	#qx{
-    		width:50%;
-    		height: 0.88rem;
-    		float: left;
-    		background:white;
-    		color:black ;
-    	}
-    	#qd{
-    		width:48.7%;
-    		height: 0.88rem;
-    		float: left;
-    		text-align: center;
-    	}
-    	.wzcj{
-    		width: 94%;
-    		height: 3.66rem;
-    		position: absolute;
-    		top: 3.3rem;
-    		left: 0.2rem;
-    		background: rgba(0,0,0,0);
-    		border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
-    		z-index: 2999;
-    	}
+        }
+
+        .del {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #CCCCCC;
+            color: #FFFFFF;
+            border-radius: 50%;
+            width: 0.3rem;
+            height: 0.3rem;
+            line-height: 0.3rem;
+            text-align: center;
+        }
+
+        #paizhao {
+            width: 90%;
+            margin: 0 auto;
+            height: 0.7rem;
+            background: #FFFFFF;
+            border: none;
+            display: block;
+            line-height: 0.7rem;
+            border-bottom: 1px solid #CCCCCC;
+        }
+
+        #addimg {
+            width: 90%;
+            margin: 0 auto;
+            height: 0.7rem;
+            background: #FFFFFF;
+            border: none;
+            display: block;
+            line-height: 0.7rem;
+            border-bottom: 1px solid #CCCCCC;
+        }
+
+        #quxiao {
+            width: 90%;
+            margin: 0 auto;
+            height: 0.7rem;
+            background: #FFFFFF;
+            border: none;
+            line-height: 0.7rem;
+            display: block;
+            line-height: 0.7rem;
+
+        }
+
+        #paixiang {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 2000;
+        }
+
+        #pqx {
+            width: 90%;
+            background: #FFFFFF;
+            height: 2.1rem;
+            position: absolute;
+            bottom: 1rem;
+            left: 5%;
+            border: 2% 2% 2% 2%/ 5% 5% 5% 5%;
+        }
+
+        #qx {
+            width: 50%;
+            height: 0.88rem;
+            float: left;
+            background: white;
+            color: black;
+        }
+
+        #qd {
+            width: 48.7%;
+            height: 0.88rem;
+            float: left;
+            text-align: center;
+        }
+
+        .wzcj {
+            width: 94%;
+            height: 3.66rem;
+            position: absolute;
+            top: 3.3rem;
+            left: 0.2rem;
+            background: rgba(0, 0, 0, 0);
+            border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;
+            z-index: 2999;
+        }
     </style>
 </head>
 <body>
-	<div class="box">
-		<header><img style="position: absolute;top: 0.2rem;left: 0.2rem;" onclick="window.location.href='renwuguanlishenhezhong.html'" src="../img/fanhui.png"/>审核详情</header>
-		<div class="zhong">
-			<div class="shenhe">
-				<p id="rwbh_p">任务编号：<span style="margin-left: 0.3rem;" id="rwbh"></span></p>
-				<p id="sxtname_p">摄像头名称：
-					<span id="sxtname"></span>
-				</p>
-				<p id="rwxq_p"><span>任务详情:</span>
-					<span style="margin-left: 0.4rem;" id="rwxq_in"></span>
-				</p>
-			</div>
-			<div id="zz1" class="zhong_d1">
-				<li id="szwz" style="font-size: 0.26rem;line-height: 0.6rem;">位置采集：</li>
-				<div id="map"></div>
-			</div>
-			<div class="wzcj">
-				
-			</div>
-			<div id="zz2" class="zhong_d2">
-				<li id="addPhoto" style="margin-top: 0.2rem;"><span style="margin-right:0.2rem;float: left;height: 1.2rem;line-height: 1.2rem;">图像采集：</span>
-					<input type="file" style="display:none;position: absolute;top:.5rem;" id="input" accept="image/*" Multiple />
-					<div id="jiahao" style="margin-top: .1rem;width: 1.2rem;height: 1.2rem;font-size: 0.6rem;color: #cccccc;border: 1px solid #cccccc;border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;line-height: 1.2rem;text-align: center;display: inline-block;">+</div>
-				</li>
-				<li style="margin: 0.2rem 0;overflow: hidden;" >摄像头编号：
-					<input type="text" name="" id="cam_id" value="" />
-				</li>
-				<li style="margin: 0.2rem 0;overflow: hidden;" >摄像头所在经度：
-					<input type="text" name="" id="cam_lon" class='lonlat' value="" />
-					<!--<input type="text" name="" id="danwei" class='lonlat' value="" />
-					<input type="text" name="" id="danwei" class='lonlat' value="" />-->
-				</li>
-				<li style="margin: 0.2rem 0;overflow: hidden;" >摄像头所在纬度：
-					<input type="text" name="" id="cam_lat" class='lonlat' value="" />
-					<!--<input type="text" name="" id="danwei" class='lonlat' value="" />
-					<input type="text" name="" id="danwei" class='lonlat' value="" />-->
-				</li>
-			    <li style="margin-bottom: .2rem ;overflow: hidden;"><p style="display: inline-block;vertical-align:middle;">采集描述:</p><textarea rows="4" cols="10" id="caijimiaoshu"  ></textarea></li>
-				
-				<!--<div class="zhong_d3">
-					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头编号：<input type="text" id="sxtbh" /></li>
-					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头名称：<input type="text" id="sxtmc" /></li>
-					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头类别：<input type="text" id="sxtlb" /></li>
-					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头添加时间：<input type="text" id="sxtsj"/></li>
-					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头更新时间：<input type="text" id="sxtgx" /></li>
-					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头采集人ID：<input type="text" id="sxtcj" /></li>
-					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头纬度：<input type="text" id="sxtwd" /></li>
-					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头经度：<input type="text" id="sxtjd" /></li>
-					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头描述信息：<input type="text" id="sxtms" /></li>
-					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头是否删除：<input type="text" id="sxtsc" /></li>
-					<li style='margin: 0.2rem 0;overflow: hidden;'>摄像头地址：<input type="text" id="sxtdz" /></li>
-				</div>-->
-			</div>
-		</div>
-		<div style="display: none;" id="paixiang">
-			<div id="pqx">
-				<input style="outline: none;" type="button" name="" id="paizhao" value="拍照" />
-				<input style="outline: none;" type="button" name="" id="addimg" value="从相册选取" />
-				<input style="outline: none;" type="button" name="" id="quxiao" value="取消" />
-			</div>
-		</div>
-		<footer id="sc">
-			<div id="qx">取消</div>
-			<div onclick="go()" id="qd">确定</div>
-		</footer>
-	</div>
+<div class="box">
+    <header><img style="position: absolute;top: 0.2rem;left: 0.2rem;"
+                 onclick="window.location.href='renwuguanlishenhezhong.html'" src="../img/fanhui.png"/>审核详情
+    </header>
+    <div class="zhong">
+        <div class="shenhe">
+            <p id="rwbh_p">任务编号：<span style="margin-left: 0.3rem;" id="rwbh"></span></p>
+            <p id="sxtname_p">摄像头名称：
+                <span id="sxtname"></span>
+            </p>
+            <p id="rwxq_p"><span>任务详情:</span>
+                <span style="margin-left: 0.4rem;" id="rwxq_in"></span>
+            </p>
+        </div>
+        <div id="zz1" class="zhong_d1">
+            <li id="szwz" style="font-size: 0.26rem;line-height: 0.6rem;">位置采集：</li>
+            <div id="map"></div>
+        </div>
+        <div class="wzcj">
+
+        </div>
+        <div id="zz2" class="zhong_d2">
+            <li id="addPhoto" style="margin-top: 0.2rem;"><span
+                    style="margin-right:0.2rem;float: left;height: 1.2rem;line-height: 1.2rem;">图像采集：</span>
+                <input type="file" style="display:none;position: absolute;top:.5rem;" id="input" accept="image/*"
+                       Multiple/>
+                <div id="jiahao"
+                     style="margin-top: .1rem;width: 1.2rem;height: 1.2rem;font-size: 0.6rem;color: #cccccc;border: 1px solid #cccccc;border-radius: 5% 5% 5% 5%/9% 9% 9% 9%;line-height: 1.2rem;text-align: center;display: inline-block;">
+                    +
+                </div>
+            </li>
+            <li style="margin: 0.2rem 0;overflow: hidden;">摄像头编号：
+                <input type="text" name="" id="cam_id" value=""/>
+            </li>
+            <li style="margin: 0.2rem 0;overflow: hidden;">摄像头所在经度：
+                <input type="text" name="" id="cam_lon" class='lonlat' value=""/>
+                <!--<input type="text" name="" id="danwei" class='lonlat' value="" />
+                <input type="text" name="" id="danwei" class='lonlat' value="" />-->
+            </li>
+            <li style="margin: 0.2rem 0;overflow: hidden;">摄像头所在纬度：
+                <input type="text" name="" id="cam_lat" class='lonlat' value=""/>
+                <!--<input type="text" name="" id="danwei" class='lonlat' value="" />
+                <input type="text" name="" id="danwei" class='lonlat' value="" />-->
+            </li>
+            <li style="margin-bottom: .2rem ;overflow: hidden;"><p style="display: inline-block;vertical-align:middle;">
+                采集描述:</p><textarea rows="4" cols="10" id="caijimiaoshu"></textarea></li>
+
+            <!--<div class="zhong_d3">
+                <li style='margin: 0.2rem 0;overflow: hidden;'>摄像头编号：<input type="text" id="sxtbh" /></li>
+                <li style='margin: 0.2rem 0;overflow: hidden;'>摄像头名称：<input type="text" id="sxtmc" /></li>
+                <li style='margin: 0.2rem 0;overflow: hidden;'>摄像头类别：<input type="text" id="sxtlb" /></li>
+                <li style='margin: 0.2rem 0;overflow: hidden;'>摄像头添加时间：<input type="text" id="sxtsj"/></li>
+                <li style='margin: 0.2rem 0;overflow: hidden;'>摄像头更新时间：<input type="text" id="sxtgx" /></li>
+                <li style='margin: 0.2rem 0;overflow: hidden;'>摄像头采集人ID：<input type="text" id="sxtcj" /></li>
+                <li style='margin: 0.2rem 0;overflow: hidden;'>摄像头纬度：<input type="text" id="sxtwd" /></li>
+                <li style='margin: 0.2rem 0;overflow: hidden;'>摄像头经度：<input type="text" id="sxtjd" /></li>
+                <li style='margin: 0.2rem 0;overflow: hidden;'>摄像头描述信息：<input type="text" id="sxtms" /></li>
+                <li style='margin: 0.2rem 0;overflow: hidden;'>摄像头是否删除：<input type="text" id="sxtsc" /></li>
+                <li style='margin: 0.2rem 0;overflow: hidden;'>摄像头地址：<input type="text" id="sxtdz" /></li>
+            </div>-->
+        </div>
+    </div>
+    <div style="display: none;" id="paixiang">
+        <div id="pqx">
+            <input style="outline: none;" type="button" name="" id="paizhao" value="拍照"/>
+            <input style="outline: none;" type="button" name="" id="addimg" value="从相册选取"/>
+            <input style="outline: none;" type="button" name="" id="quxiao" value="取消"/>
+        </div>
+    </div>
+    <footer id="sc">
+        <div id="qx">取消</div>
+        <div onclick="go()" id="qd">确定</div>
+    </footer>
+</div>
 </body>
 <script type="text/javascript">
-	var mobile=localStorage.getItem('mobile');
-	var token=localStorage.getItem('token');
-    $('.wzcj').tap(function(){
-    	sessionStorage.setItem('dt','3');
-    	window.location.href='ditu.html';
+    var mobile = localStorage.getItem('mobile');
+    var token = localStorage.getItem('token');
+    $('.wzcj').tap(function () {
+        sessionStorage.setItem('dt', '3');
+        window.location.href = 'ditu.html';
     })
     /*拍照*/
-	var paizhaoNum=-1;
-	document.addEventListener('plusready', function(){
-    	$('#paizhao').click(function(){
-    		var cmr = plus.camera.getCamera();
-			cmr.captureImage(function(p) { 
-				plus.gallery.save(p, function(){
-				}, function(e){
-				});
-		    	plus.io.resolveLocalFileSystemURL(p, function(entry) {  
-			    	$('#paixiang').css('display','none');
-					var addPhoto= document.getElementById("addPhoto");
-		        	var img=document.createElement("img");
-					var li=document.createElement("li");
-					var nav=document.createElement("nav");
-					addPhoto.appendChild(li);
-					img.className="liMag";
-					img.src=entry.fullPath;
-					li.id=paizhaoNum;
-					paizhaoNum--;
-					li.appendChild(img);
-					nav.className="del";
-					nav.innerHTML='<div class="circle" onclick="delImg(\''+li.id+'\');">X</div>';
-					li.appendChild(nav);
-		        }, function(e) {  
-		            alert(e.message);  
-		        });  
-		    }, function(e) {}, {
-		        filename: "_doc/camera/"  
-		    }); 
-	    	$('#paixiang').css('display','none');
-		})
+    var paizhaoNum = -1;
+    document.addEventListener('plusready', function () {
+        $('#paizhao').click(function () {
+            var cmr = plus.camera.getCamera();
+            cmr.captureImage(function (p) {
+                plus.gallery.save(p, function () {
+                }, function (e) {
+                });
+                plus.io.resolveLocalFileSystemURL(p, function (entry) {
+                    $('#paixiang').css('display', 'none');
+                    var addPhoto = document.getElementById("addPhoto");
+                    var img = document.createElement("img");
+                    var li = document.createElement("li");
+                    var nav = document.createElement("nav");
+                    addPhoto.appendChild(li);
+                    img.className = "liMag";
+                    img.src = entry.fullPath;
+                    li.id = paizhaoNum;
+                    paizhaoNum--;
+                    li.appendChild(img);
+                    nav.className = "del";
+                    nav.innerHTML = '<div class="circle" onclick="delImg(\'' + li.id + '\');">X</div>';
+                    li.appendChild(nav);
+                }, function (e) {
+                    alert(e.message);
+                });
+            }, function (e) {
+            }, {
+                filename: "_doc/camera/"
+            });
+            $('#paixiang').css('display', 'none');
+        })
     });
-	//拍照取消
-    $('#quxiao').tap(function(){
-    	setTimeout(function(){
-    		$('#paixiang').css('display','none')
-    	},200)
-    	
+    //拍照取消
+    $('#quxiao').tap(function () {
+        setTimeout(function () {
+            $('#paixiang').css('display', 'none')
+        }, 200)
+
     })
     //调出拍照，相册选取
-    $('#jiahao').tap(function(){
-    	setTimeout(function(){
-    		$('#paixiang').css('display','block')
-    	},200)
-    	
+    $('#jiahao').tap(function () {
+        setTimeout(function () {
+            $('#paixiang').css('display', 'block')
+        }, 200)
+
     })
     var fb_Id
-    var toke=localStorage.getItem('token');
-    var mob=localStorage.getItem('mobile');
-    var cam_Id=sessionStorage.getItem('camId');
+    var toke = localStorage.getItem('token');
+    var mob = localStorage.getItem('mobile');
+    var cam_Id = sessionStorage.getItem('camId');
     $("#rwbh").text(sessionStorage.getItem('taskNO'));
     $("#sxtname").text(sessionStorage.getItem('cameraName'));
     $("#rwxq_in").text(sessionStorage.getItem('taskDescription'));
-	//摄像头反馈信息调用接口
-    var inputElement = document.getElementById("input");  
-	inputElement.addEventListener("change", handleFiles, false);
-	document.getElementById('addimg').onclick = function () { 
-	    inputElement.click();
-	    $('#paixiang').css('display','none');
-	}
-	var formBefore=[]; //存储图片文件
-	var nameList=[];   //存储img ID
-	var j=0;
-	function handleFiles(){
-	//两种添加形式,单个或多个文件
-		var fileList = this.files;
-			for( var i = 0 ; i < fileList.length ; i++ ){
-				 formBefore.push(fileList[i]);	 
-			     nameList.push((j+i));
-			     console.log(nameList);
-			}
-		j+=fileList.length;
-		showhandleFiles(fileList,nameList);
-	}
-	//不通过后台显示file图片
-	function showhandleFiles(files,nl){
-	    for (var i = 0; i < files.length; i++) {
-		    var file = files[i];
-				//添加图片
-		    var addPhoto= document.getElementById("addPhoto");
-	        var img=document.createElement("img");
-			var li=document.createElement("li");
-			var nav=document.createElement("nav")
-			addPhoto.appendChild(li);
-			img.file = file;
-			li.id=nl[j-files.length+i];//上次上传数加本次上传数
-			img.className="liMag";
-			li.appendChild(img);
-			nav.className="del";
-			nav.innerHTML='<div class="circle" onclick="delImg(\''+li.id+'\');">X</div>';
-			li.appendChild(nav);
-			//读取文件
-	        var reader = new FileReader();
-	        reader.onload = (function(aImg){
-	            return function(e){
-	                aImg.src = e.target.result;
-	            };
-	        })(img);
-	        reader.readAsDataURL(file);
-	    }
-	}
-	//删除图片
-    function delImg(fileId){
-     	var addPhoto= document.getElementById("addPhoto");
-     	var imgLi=document.getElementById(fileId);
-     	addPhoto.removeChild(imgLi);
-     	formBefore.splice(fileId,1); //删除点击事件对应图片文件
-     	console.log(formBefore);
+    //摄像头反馈信息调用接口
+    var inputElement = document.getElementById("input");
+    inputElement.addEventListener("change", handleFiles, false);
+    document.getElementById('addimg').onclick = function () {
+        inputElement.click();
+        $('#paixiang').css('display', 'none');
     }
-   /*--------------------------------------摄像头属性内容添加及上传---------------------------------------*/
-	var feedbeckId;
-	function caijifanhui(){
-		var Data = {};
-		Data.mobile = localStorage.getItem('mobile')
-		Data.token = localStorage.getItem('token')
-		Data.taskId = sessionStorage.getItem('taskId')
-		$.ajax({
-            url: local+"/task/getTaskByIdAPP",
+    var formBefore = []; //存储图片文件
+    var nameList = [];   //存储img ID
+    var j = 0;
+
+    function handleFiles() {
+        //两种添加形式,单个或多个文件
+        var fileList = this.files;
+        for (var i = 0; i < fileList.length; i++) {
+            formBefore.push(fileList[i]);
+            nameList.push((j + i));
+            console.log(nameList);
+        }
+        j += fileList.length;
+        showhandleFiles(fileList, nameList);
+    }
+
+    //不通过后台显示file图片
+    function showhandleFiles(files, nl) {
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            //添加图片
+            var addPhoto = document.getElementById("addPhoto");
+            var img = document.createElement("img");
+            var li = document.createElement("li");
+            var nav = document.createElement("nav")
+            addPhoto.appendChild(li);
+            img.file = file;
+            li.id = nl[j - files.length + i];//上次上传数加本次上传数
+            img.className = "liMag";
+            li.appendChild(img);
+            nav.className = "del";
+            nav.innerHTML = '<div class="circle" onclick="delImg(\'' + li.id + '\');">X</div>';
+            li.appendChild(nav);
+            //读取文件
+            var reader = new FileReader();
+            reader.onload = (function (aImg) {
+                return function (e) {
+                    aImg.src = e.target.result;
+                };
+            })(img);
+            reader.readAsDataURL(file);
+        }
+    }
+
+    //删除图片
+    function delImg(fileId) {
+        var addPhoto = document.getElementById("addPhoto");
+        var imgLi = document.getElementById(fileId);
+        addPhoto.removeChild(imgLi);
+        formBefore.splice(fileId, 1); //删除点击事件对应图片文件
+        console.log(formBefore);
+    }
+
+    /*--------------------------------------摄像头属性内容添加及上传---------------------------------------*/
+    var feedbeckId;
+
+    function caijifanhui() {
+        var Data = {};
+        Data.mobile = localStorage.getItem('mobile')
+        Data.token = localStorage.getItem('token')
+        Data.taskId = sessionStorage.getItem('taskId')
+        $.ajax({
+            url: local + "/task/getTaskByIdAPP",
             type: 'POST',
             data: Data,
-            success: function(data) {
- 				console.log(data);
-                var taskFeedBacks=data.taskFeedBacks;
-	            feedbeckId=taskFeedBacks[0].Id;
-            },
-            error: function(data) {
+            success: function (data) {
                 console.log(data);
-            }
-    	});
-	}
-	caijifanhui()
-	//获取摄像头属性列及缓存值
-	var date1;
-	var mobile=localStorage.getItem('mobile');
-	var token=localStorage.getItem('token');
-	var userId=localStorage.getItem('userId');
-	function getCameraAttr(){
-        	$.ajax({
-				  url: local+"/camera/getCameraAttrs_APP",
-				  type: 'POST',
-				  async: false,
-				  data:{
-				   	mobile:mobile,
-   					token:token,
-	            	type: 1
-				  },
-				success:function(data){
-	        		date1 = data.data.rows;
-	        		var html='';
-	        		var Data={};
-	        		Data.mobile = localStorage.getItem('mobile')
-					Data.token = localStorage.getItem('token')
-	        		Data.taskId = sessionStorage.getItem('taskId')
-					$.ajax({
-			            url: local+"/task/getTaskByIdAPP",
-			            type: 'POST',
-			            data: Data,
-			            success: function(data) {
-			               cameraExtra = JSON.parse(data.taskFeedBacks[0].cameraExtra)            
-				           cameraImgFeed=data.taskFeedBacks[0].taskFeedBackPics;
-				          //加载图片
-			              var html0='';
-			               for(var j=0;j<cameraImgFeed.length;j++)
-			               {
-			               	html0+="<div  onclick='delImg(&#39im"+j+"&#39 );' id='im"+j+"' style='width: 1.2rem;height: 1.2rem;float: left;margin-right: 0.1rem;margin-top: 0.1rem;position: relative;'>"+
-						           "<span id='s"+j+"'  style='position: absolute;right:0;top: 0;display: block;width: 0.3rem;height: 0.3rem;text-align: center;border-radius: 50%;background: #CCCCCC;color: #FFFFFF;'>X</span>"+
-						           "<img id='im"+j+"' style='border-radius: .1rem;width: 1.2rem;height: 1.2rem;' src='"+cameraImgFeed[j].url+"'></div>"
-			               }
-			               $('#addPhoto').append(html0);
-				                $('#sxtbh').val(cameraExtra[0].cam_no)
-				            	$('#sxtmc').val(cameraExtra[1].cam_name)
-				            	$('#sxtlb').val(cameraExtra[2].cam_sta)
-				            	$('#sxtsj').val(cameraExtra[3].addtime)
-				            	$('#sxtgx').val(cameraExtra[4].uptime)
-				            	$('#sxtcj').val(cameraExtra[5].user_id)
-				            	$('#sxtwd').val(cameraExtra[6].cam_loc_lan)
-				            	$('#sxtjd').val(cameraExtra[7].cam_loc_lon)
-				            	$('#sxtms').val(cameraExtra[8].cam_desc)
-				            	$('#sxtsc').val(cameraExtra[9].is_del)
-				            	$('#sxtdz').val(cameraExtra[10].cam_addr)
-				                for(var i=11;i<cameraExtra.length;i++)
-				                {
-				                	var attrname = cameraExtra[i]
-				            		for(key in attrname){
-//				            			console.log(key)
-				            		}
-				            			html+="<li style='margin: 0.2rem 0;overflow: hidden;'>"+date1[i-11].attr_desc+":<input type='text' name='' id='"+date1[i-11].attr_name+"' value='"+attrname[key]+"' /></li>"
-				                }
-				                $('.zhong_d3').append(html);							
-			            },
-			            error: function(data) {
-			                console.log(data);
-			            }
-			    });
-	        	},
-				error: function(data) {
-		                console.log(data);
-		        }
-			})
-    }
-	getCameraAttr();
-	cam_attr=[];
-	//点击上传
-    function go() {
-	 	wa = plus.nativeUI.showWaiting();  
-        var formData = new FormData();
-        formData.append("mobile",mobile);
-        formData.append("token",token);
-        console.log(formBefore);
-        for(i=0;i<formBefore.length;i++)
-        {
-        	formData.append("file"+i,formBefore[i]);
-        }
-        $.ajax({
-            url: local+'/file/mulUpload',
-            type: 'POST',
-            data: formData,
-	        async: false,
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function(data) {
-            	console.log(JSON.stringify(data));
-            	console.log(123456)
-            	console.log(date1.length)
-                links=data.data.urls;
-                for(var i=1;i<date1.length;i++){
-                		var bo = date1[i].attr_name;
-                	    var ob={[bo]:$('#zz2').find('input').eq(i).val()}
-                	    cam_attr.push(ob);
-               }
-                feedback(links);
+                var taskFeedBacks = data.taskFeedBacks;
+                feedbeckId = taskFeedBacks[0].Id;
             },
-            error: function(data) {
+            error: function (data) {
                 console.log(data);
             }
         });
     }
-	//上传采集信息
-	function feedback(imgLinks){
-			var picLinks= JSON.stringify(imgLinks);
-			var cameraExtra = JSON.stringify(cam_attr);
-			console.log(cameraExtra);
-			var data = {};
-	        data.mobile=mobile,
-			data.token=token,
-		    data.taskId=sessionStorage.getItem('taskId'),//摄像头ID
-		    data.taskFeedBackId=feedbeckId,//采集反馈ID
-		    data.content=$('#caijimiaoshu').val(),//采集描述
-		    data.cameraLon="500015.29283",//经度
-		    data.cameraLa="306325.56234",//纬度
-		    data.cameraNo=$('#cam_id').val(),//摄像头编号
-		    data.cameraExtra=cameraExtra,//摄像头自定义属性
-		    data.pics=picLinks//图片数组JSON字符串
-		    console.log(data)
-			$.ajax({
-				  url: local+"/task/taskFeedBackEdit",
-				  type: 'POST',
-				  async: false,
-				  data:data,
-				success:function(data){
-	        		console.log(JSON.stringify(data));
-	        		if(data.code == 200){
-	        			wa.close();
-	        			window.location.href='renwuguanlishenhezhong.html';
-	        		}
-	        		
-	        },
-				error: function(data) {
-		                console.log(data);
-		        }
-			})
-		};
 
-	//选取图片
-    $('#input').change(function(){
-    	$('#paixiang').css('display','none')
+    caijifanhui()
+    //获取摄像头属性列及缓存值
+    var date1;
+    var mobile = localStorage.getItem('mobile');
+    var token = localStorage.getItem('token');
+    var userId = localStorage.getItem('userId');
+
+    function getCameraAttr() {
+        $.ajax({
+            url: local + "/camera/getCameraAttrs_APP",
+            type: 'POST',
+            async: false,
+            data: {
+                mobile: mobile,
+                token: token,
+                type: 1
+            },
+            success: function (data) {
+                date1 = data.data.rows;
+                var html = '';
+                var Data = {};
+                Data.mobile = localStorage.getItem('mobile')
+                Data.token = localStorage.getItem('token')
+                Data.taskId = sessionStorage.getItem('taskId')
+                $.ajax({
+                    url: local + "/task/getTaskByIdAPP",
+                    type: 'POST',
+                    data: Data,
+                    success: function (data) {
+                        cameraExtra = JSON.parse(data.taskFeedBacks[0].cameraExtra)
+                        cameraImgFeed = data.taskFeedBacks[0].taskFeedBackPics;
+                        //加载图片
+                        var html0 = '';
+                        for (var j = 0; j < cameraImgFeed.length; j++) {
+                            html0 += "<div  onclick='delImg(&#39im" + j + "&#39 );' id='im" + j + "' style='width: 1.2rem;height: 1.2rem;float: left;margin-right: 0.1rem;margin-top: 0.1rem;position: relative;'>" +
+                                "<span id='s" + j + "'  style='position: absolute;right:0;top: 0;display: block;width: 0.3rem;height: 0.3rem;text-align: center;border-radius: 50%;background: #CCCCCC;color: #FFFFFF;'>X</span>" +
+                                "<img id='im" + j + "' style='border-radius: .1rem;width: 1.2rem;height: 1.2rem;' src='" + cameraImgFeed[j].url + "'></div>"
+                        }
+                        $('#addPhoto').append(html0);
+                        $('#sxtbh').val(cameraExtra[0].cam_no)
+                        $('#sxtmc').val(cameraExtra[1].cam_name)
+                        $('#sxtlb').val(cameraExtra[2].cam_sta)
+                        $('#sxtsj').val(cameraExtra[3].addtime)
+                        $('#sxtgx').val(cameraExtra[4].uptime)
+                        $('#sxtcj').val(cameraExtra[5].user_id)
+                        $('#sxtwd').val(cameraExtra[6].cam_loc_lan)
+                        $('#sxtjd').val(cameraExtra[7].cam_loc_lon)
+                        $('#sxtms').val(cameraExtra[8].cam_desc)
+                        $('#sxtsc').val(cameraExtra[9].is_del)
+                        $('#sxtdz').val(cameraExtra[10].cam_addr)
+                        for (var i = 11; i < cameraExtra.length; i++) {
+                            var attrname = cameraExtra[i]
+                            for (key in attrname) {
+//				            			console.log(key)
+                            }
+                            html += "<li style='margin: 0.2rem 0;overflow: hidden;'>" + date1[i - 11].attr_desc + ":<input type='text' name='' id='" + date1[i - 11].attr_name + "' value='" + attrname[key] + "' /></li>"
+                        }
+                        $('.zhong_d3').append(html);
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    }
+                });
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        })
+    }
+
+    getCameraAttr();
+    cam_attr = [];
+
+    //点击上传
+    function go() {
+        wa = plus.nativeUI.showWaiting();
+        var formData = new FormData();
+        formData.append("mobile", mobile);
+        formData.append("token", token);
+        console.log(formBefore);
+        for (i = 0; i < formBefore.length; i++) {
+            formData.append("file" + i, formBefore[i]);
+        }
+        $.ajax({
+            url: local + '/file/mulUpload',
+            type: 'POST',
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                console.log(JSON.stringify(data));
+                console.log(123456)
+                console.log(date1.length)
+                links = data.data.urls;
+                for (var i = 1; i < date1.length; i++) {
+                    var bo = date1[i].attr_name;
+                    var ob = {[bo]: $('#zz2').find('input').eq(i).val()}
+                    cam_attr.push(ob);
+                }
+                feedback(links);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
+    //上传采集信息
+    function feedback(imgLinks) {
+        var picLinks = JSON.stringify(imgLinks);
+        var cameraExtra = JSON.stringify(cam_attr);
+        console.log(cameraExtra);
+        var data = {};
+        data.mobile = mobile,
+            data.token = token,
+            data.taskId = sessionStorage.getItem('taskId'),//摄像头ID
+            data.taskFeedBackId = feedbeckId,//采集反馈ID
+            data.content = $('#caijimiaoshu').val(),//采集描述
+            data.cameraLon = "500015.29283",//经度
+            data.cameraLa = "306325.56234",//纬度
+            data.cameraNo = $('#cam_id').val(),//摄像头编号
+            data.cameraExtra = cameraExtra,//摄像头自定义属性
+            data.pics = picLinks//图片数组JSON字符串
+        console.log(data)
+        $.ajax({
+            url: local + "/task/taskFeedBackEdit",
+            type: 'POST',
+            async: false,
+            data: data,
+            success: function (data) {
+                console.log(JSON.stringify(data));
+                if (data.code == 200) {
+                    wa.close();
+                    window.location.href = 'renwuguanlishenhezhong.html';
+                }
+
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        })
+    };
+
+    //选取图片
+    $('#input').change(function () {
+        $('#paixiang').css('display', 'none')
     })
     //图片遮挡
-    $('input').on('focus',function(){
-    	var target = this;
-    	setTimeout(function(){
-    		target.scrollIntoViewIfNeeded();
-    	},100)
-    })
-	//图片删除
-    $('#s1').click(function(){
-    	$('#im1_d1').remove()
+    $('input').on('focus', function () {
+        var target = this;
+        setTimeout(function () {
+            target.scrollIntoViewIfNeeded();
+        }, 100)
     })
     //图片删除
-    $('#s2').click(function(){
-    	alert(1)
-    	$('#im2_d2').remove()
+    $('#s1').click(function () {
+        $('#im1_d1').remove()
+    })
+    //图片删除
+    $('#s2').click(function () {
+        alert(1)
+        $('#im2_d2').remove()
     })
     //取消修改
-    $('#qx').tap(function(){
-    	window.location.href='shenghexiangqing1.html'
+    $('#qx').tap(function () {
+        window.location.href = 'shenghexiangqing1.html'
     })
     window.addEventListener('resize', function () {
-    	if(document.activeElement.tagName == 'INPUT' || document.activeElement.tagName == 'TEXTAREA') {
-	        window.setTimeout(function () {
-	        	document.activeElement.scrollIntoViewIfNeeded();
-	        }, 0);
-    	}
+        if (document.activeElement.tagName == 'INPUT' || document.activeElement.tagName == 'TEXTAREA') {
+            window.setTimeout(function () {
+                document.activeElement.scrollIntoViewIfNeeded();
+            }, 0);
+        }
     })
-    $(function(){
-		document.addEventListener( "plusready", function(){
-			plus.key.addEventListener("backbutton",function(){
-				javascript:history.go(-1)
-			}); 
-		}, false );
-	})
+    $(function () {
+        document.addEventListener("plusready", function () {
+            plus.key.addEventListener("backbutton", function () {
+                javascript:history.go(-1)
+            });
+        }, false);
+    })
 </script>
 <!--加载地图-->
 <script type="text/javascript" src="../js/mapUrl.js"></script>  <!--一定要div map后引用-->
 <script type="text/javascript">
-    function markercenter(){
-    	if(sessionStorage.getItem('x3')){
-    		lan();
-    		//alert(sessionStorage.getItem('x3')+' '+sessionStorage.getItem('y3'));
-    		positionMarker.clearMarkers();
-    		var lonLat = new SuperMap.LonLat(sessionStorage.getItem('x3'), sessionStorage.getItem('y3'));
-			size = new SuperMap.Size(21, 33);
-			offset = new SuperMap.Pixel(-(size.w/2), -size.h);
-			icon = new SuperMap.Icon("../img/dw.png", size, offset);
-			positionMarker.addMarker(new SuperMap.Marker(lonLat, icon));
-			//map.setCenter(lonLat);
-			//map.pan(0.000001, 0);
-    	}
+    function markercenter() {
+        if (sessionStorage.getItem('x3')) {
+            lan();
+            //alert(sessionStorage.getItem('x3')+' '+sessionStorage.getItem('y3'));
+            positionMarker.clearMarkers();
+            var lonLat = new SuperMap.LonLat(sessionStorage.getItem('x3'), sessionStorage.getItem('y3'));
+            size = new SuperMap.Size(21, 33);
+            offset = new SuperMap.Pixel(-(size.w / 2), -size.h);
+            icon = new SuperMap.Icon("../img/dw.png", size, offset);
+            positionMarker.addMarker(new SuperMap.Marker(lonLat, icon));
+            //map.setCenter(lonLat);
+            //map.pan(0.000001, 0);
+        }
     }
+
     markercenter();
-    function lan(){
-		$('#cam_lat').val(sessionStorage.getItem('y3'))
-    	$('#cam_lon').val(sessionStorage.getItem('x3'))
-	}
+
+    function lan() {
+        $('#cam_lat').val(sessionStorage.getItem('y3'))
+        $('#cam_lon').val(sessionStorage.getItem('x3'))
+    }
 </script>
 </html>
